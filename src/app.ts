@@ -1,3 +1,11 @@
+/**
+ * Title: 'Application'
+ * Description: ''
+ * Author: 'Masum Rana'
+ * Date: 27-12-2023
+ *
+ */
+
 import express, { Application } from 'express';
 import cors from 'cors';
 import GlobalErrorHandler from './app/middlewares/GlobalErrorHanlder';

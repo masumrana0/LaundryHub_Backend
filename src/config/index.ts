@@ -15,4 +15,8 @@ export default {
   port: process.env.PORT,
   database_url: process.env.DATABASE_URL,
   bcrypt_salt_rounds: process.env.SOLT_ROUNDS,
+  accessTokenSecret: process.env.JWT_ACCESSTOKEN_SECRET,
+  refreshTokenSecret: process.env.JWT_REFRESHTOKEN_SECRET,
+  accessTokenExpireIn: process.env.JWT_ACCESSTOKEN_EXPIRE,
+  refreshTokenExpireIn: process.env.JWT_REFRESHTOKEN_EXPIRE,
 };

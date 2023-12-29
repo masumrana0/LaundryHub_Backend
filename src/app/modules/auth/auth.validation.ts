@@ -5,33 +5,28 @@
  * Date: 29-12-2023
  *
  */
-
 import z from 'zod';
-import { userRole } from '../user/user.constant';
 
-// user registration validation zod schema
+// User registration validation schema
+// Define an enum schema for the user role
+
+// Define the complete user schema using the enum
 const registerUserZodSchema = z.object({
-  name: z.object(
-    {
-      firstName: z.string({
-        required_error: 'firstName is required',
-      }),
-      lastName: z.string().optional(),
-    },
-    { required_error: 'name is requred' },
-  ),
-  role: z.enum(['', ...userRole], {
-    required_error: 'user role is requred',
+  name: z.object({
+    firstName: z.string(),
+    lastName: z.string().optional(),
   }),
-  email: z.string({ required_error: 'email is requred' }).email(),
-  password: z.string({ required_error: 'password is required' }),
-  phoneNumber: z.string().optional(),
-});
-
-// user login validation zod schema
-const loginUserZodSchema = z.object({
+  role: z.enum(['customer', 'admin', 'super_admin']),
+  phoneNumber: z.string(),
   email: z.string().email(),
-  password: z.string({ required_error: 'password is requred' }),
+  password: z.string(),
+});
+// User login validation schema
+const loginUserZodSchema = z.object({
+  email: z
+    .string({ required_error: 'Email is required' })
+    .email({ message: 'Invalid email format' }),
+  password: z.string({ required_error: 'Password is required' }),
 });
 
 export const authValidationSchema = {

@@ -11,9 +11,12 @@ import cors from 'cors';
 import GlobalErrorHandler from './app/middlewares/GlobalErrorHanlder';
 import handleNotFoundApi from './errors/handleNotFound';
 import router from './app/routes';
+import cookieParser from 'cookie-parser';
 const app: Application = express();
 
+
 app.use(cors());
+app.use(cookieParser());
 
 //parser
 app.use(express.json());

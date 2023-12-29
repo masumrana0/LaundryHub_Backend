@@ -10,6 +10,7 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import GlobalErrorHandler from './app/middlewares/GlobalErrorHanlder';
 import handleNotFoundApi from './errors/handleNotFound';
+import router from './app/routes';
 const app: Application = express();
 
 app.use(cors());
@@ -18,6 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// route
+app.use('/api/v1', router);
 // Global Error handler
 app.use(GlobalErrorHandler);
 

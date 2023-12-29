@@ -1,4 +1,4 @@
-# -LaundryHub_Backend
+# LaundryHub_Backend
 
 ## LaundryHub_Backend_Authentication Policy
 
@@ -23,7 +23,7 @@
 }
 ```
 
-##Token Decoded Data
+## Token Decoded Data
 
 ```json
 userId:03294ujdjf,

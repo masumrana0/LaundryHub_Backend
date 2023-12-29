@@ -14,7 +14,7 @@
       "firstName": "Masud",
       "lastName": "Rana"
   }
-  role:customer | admin | super admin,
+  "role::"customer" | "admin" | "super_admin",
   "password": "123456",
   "phoneNumber": "011111111114",
   "email":"example@gmail.com",
@@ -27,6 +27,6 @@
 
 ```json
 userId:03294ujdjf,
-role:customer | admiñ | super admin,
+ "role::"customer" | "admin" | "super_admin",
 email:expample@gmail.com,
 ```

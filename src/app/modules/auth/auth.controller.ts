@@ -17,14 +17,23 @@ import { Request, Response } from 'express';
 
 // user registration
 const userRegistration = catchAsync(async (req: Request, res: Response) => {
-  const { ...data } = req.body;
+  const { ...userData } = req.body;
+  const result = await AuthService.userRegistration(userData);
+  const { refreshToken, accessToken, isEmailVerified } = result;
+  const responseData = { accessToken, isEmailVerified };
+  // set refresh token into cookie
+  const cookieOptions = {
+    secure: config.env === 'production',
+    httpOnly: true,
+  };
 
-  const result = await AuthService.userRegistration(data);
-  sendResponse<IUser | null>(res, {
+  res.cookie('refreshToken', refreshToken, cookieOptions);
+
+  sendResponse<ILoginUserResponse>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User Registration successful',
-    data: result,
+    message: 'User Registration in successfully !',
+    data: responseData,
   });
 });
 
@@ -32,7 +41,7 @@ const userRegistration = catchAsync(async (req: Request, res: Response) => {
 const loginUser = catchAsync(async (req: Request, res: Response) => {
   const { ...loginData } = req.body;
   const result = await AuthService.loginUser(loginData);
-  const { refreshToken } = result;
+  const { refreshToken, accessToken } = result;
   // set refresh token into cookie
   const cookieOptions = {
     secure: config.env === 'production',
@@ -45,7 +54,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
     statusCode: 200,
     success: true,
     message: 'User logged in successfully !',
-    data: result,
+    data: { accessToken },
   });
 });
 

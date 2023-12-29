@@ -17,10 +17,21 @@ import { Secret } from 'jsonwebtoken';
 
 // user registration
 const userRegistration = async (
-  payload: IUser | null,
-): Promise<IUser | null> => {
+  payload: IUser,
+): Promise<ILoginUserResponse> => {
+  if (!payload.role) {
+    payload.role = 'customer';
+  }
+
   const result = await User.create(payload);
-  return result;
+  if (!result) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Something is wrong');
+  }
+
+  const loginData = { email: result?.email, password: payload?.password };
+  const token = await loginUser(loginData);
+
+  return token;
 };
 
 // login user
@@ -42,7 +53,7 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   }
 
   // create accessToken & refresh token
-  const { _id, role, email: Email } = isUserExist;
+  const { _id, role, email: Email, isEmailVerified } = isUserExist;
 
   // create accessToken
   const accessToken = jwtHelpers.createToken(
@@ -68,6 +79,7 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   return {
     accessToken,
     refreshToken,
+    isEmailVerified,
   };
 };
 

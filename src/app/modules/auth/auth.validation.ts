@@ -5,12 +5,10 @@
  * Date: 29-12-2023
  *
  */
+
 import z from 'zod';
 
 // User registration validation schema
-// Define an enum schema for the user role
-
-// Define the complete user schema using the enum
 const registerUserZodSchema = z.object({
   name: z.object({
     firstName: z.string(),
@@ -21,6 +19,7 @@ const registerUserZodSchema = z.object({
   email: z.string().email(),
   password: z.string(),
 });
+
 // User login validation schema
 const loginUserZodSchema = z.object({
   email: z

@@ -1,4 +1,4 @@
-# LaundryHub_Backend
+# -LaundryHub_Backend
 
 ## LaundryHub_Backend_Authentication Policy
 
@@ -14,7 +14,7 @@
       "firstName": "Masud",
       "lastName": "Rana"
   }
-  "role":"customer" | "admin" | "super_admin",
+  "role":["customer","admin", "super_admin"],
   "password": "123456",
   "phoneNumber": "011111111114",
   "email":"example@gmail.com",
@@ -26,7 +26,34 @@
 ## Token Decoded Data
 
 ```json
-userId:03294ujdjf,
+"userId":"03294ujdjf",
 "role":"customer" | "admin" | "super_admin",
-email:expample@gmail.com,
+"email":"expample@gmail.com",
+```
+
+## Laundry Service list
+
+- Wash & Iron
+- Wash & Fold
+- Iron & Fold
+- Dry Cleaning
+- Spotless Wash & Iron
+- SoftWash & Iron
+- Ironing and Pressing
+- Stain Removal
+- Eco-Friendly Cleaning
+- Spot Removal
+- Deep Wash
+- Normal Wash
+- Crystal Clear Cleaning
+- Iron and Fold
+
+## Services data pattern.
+
+```json
+"title":"Wash & Iron"
+"img":"img-url"
+"dettails":["","",""],
+"reviews:[{name,review}]
+
 ```

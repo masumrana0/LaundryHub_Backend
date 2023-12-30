@@ -15,15 +15,17 @@ type IOptions = {
   sortOrder?: SortOrder;
 };
 
-type IOptionsResult = {
-  page: number;
-  limit: number;
-  skip: number;
-  sortBy: string;
-  sortOrder: SortOrder;
+export type IPaginationOptions = {
+  page?: number;
+  limit?: number;
+  skip?: number;
+  sortBy?: string;
+  sortOrder?: SortOrder;
 };
 
-const calculatePagination = (options: IOptions): IOptionsResult => {
+const paginationFields = ['page', 'limit', 'sortBy', 'sortOrder'];
+
+const calculatePagination = (options: IOptions): IPaginationOptions => {
   const page = Number(options.page || 1);
   const limit = Number(options.limit || 10);
   const skip = (page - 1) * limit;
@@ -42,4 +44,5 @@ const calculatePagination = (options: IOptions): IOptionsResult => {
 
 export const paginationHelpers = {
   calculatePagination,
+  paginationFields,
 };

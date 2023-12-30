@@ -1,4 +1,1 @@
-export const serviceFilterAbleField=[
-    "title",
-    
-]
+export const serviceFilterAbleField = ['searchTerm', 'title'];

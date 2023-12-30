@@ -8,7 +8,16 @@
 
 import { Response } from 'express';
 
-type IApiResponse<T> = {
+export type IGenericResponse<T> = {
+  meta?: {
+    page: number;
+    limit: number;
+    total?: number;
+  };
+  data: T | null | undefined;
+};
+
+export type IApiResponse<T> = {
   statusCode: number;
   success: boolean;
   message?: string | null;

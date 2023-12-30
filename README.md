@@ -57,3 +57,14 @@
 "reviews:[{name,review}]
 
 ```
+
+
+## Cleaning Product list 
+
+
+## Cleaning Product demo data 
+ ```json
+"category":"home | men | woman,
+"name":"Top Wear (Shirt / T-shirt / Fatua)",
+ "price":150
+```

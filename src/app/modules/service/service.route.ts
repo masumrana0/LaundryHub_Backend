@@ -13,10 +13,16 @@ import { ServiceController } from './service.controller';
 
 const router = express.Router();
 
+// create service by admin
 router.post(
   '/',
-  validateRequest(ServiceValidation.serviceValidationSchema),
+  //   validateRequest(ServiceValidation.serviceValidationSchema),
   ServiceController.createService,
 );
 
+// get Single service
+router.get('/:id', ServiceController.getSingleService);
+
+// get All Service
+router.get('/', ServiceController.getAllService);
 export const ServiceRoutes = router;

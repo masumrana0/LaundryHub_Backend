@@ -24,4 +24,4 @@ router.post(
   // validateRequest(authValidationSchema.loginUserZodSchema),
   AuthController.loginUser,
 );
-export const authRouter = router;
+export const authRoutes = router;

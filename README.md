@@ -1,4 +1,4 @@
-# -LaundryHub_Backend
+# LaundryHub_Backend
 
 ## LaundryHub_Backend_Authentication Policy
 

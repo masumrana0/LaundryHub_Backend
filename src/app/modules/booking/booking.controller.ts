@@ -1,3 +1,11 @@
+/**
+ * Title: 'Booking controller'
+ * Description: ''
+ * Author: 'Masum Rana'
+ * Date: 31-12-2023
+ *
+ */
+
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
@@ -5,8 +13,8 @@ import { IBooking } from './booking.interface';
 import httpStatus from 'http-status';
 import { BookingService } from './booking.service';
 import pick from '../../../shared/pick';
-import { paginationHelpers } from '../../../helper/paginationHelper';
 import { BookingFilterAbleFiled } from './booking.constant';
+import { paginationFields } from '../../../constant/pagination';
 
 // make booking product
 const makeBooking = catchAsync(async (req: Request, res: Response) => {
@@ -53,7 +61,7 @@ const cancelBooking = catchAsync(async (req: Request, res: Response) => {
 // get booking  data
 const getAllbookingData = catchAsync(async (req: Request, res: Response) => {
   const query = req.query;
-  const paginationOptions = pick(query, paginationHelpers.paginationFields);
+  const paginationOptions = pick(query, paginationFields);
   const filters = pick(query, BookingFilterAbleFiled);
   const result = await BookingService.getAllbooking(paginationOptions, filters);
   sendResponse<IBooking[] | null>(res, {

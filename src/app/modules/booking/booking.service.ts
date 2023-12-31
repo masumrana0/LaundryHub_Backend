@@ -51,6 +51,7 @@ const getAllbooking = async (
     paginationHelpers.calculatePagination(paginationOptions);
 
   const andConditions = [];
+  // implementaion for searching
   if (searchTerm) {
     andConditions.push({
       $or: BookingFilterAbleFiled.map(field => ({

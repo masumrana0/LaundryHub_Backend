@@ -1,3 +1,11 @@
+/**
+ * Title: 'authentication middlewares'
+ * Description: ''
+ * Author: 'Masum Rana'
+ * Date: 31-12-2023
+ *
+ */
+
 import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import { Secret } from 'jsonwebtoken';

@@ -4,8 +4,7 @@
  * Author: 'Masum Rana'
  * Date: 27-12-2023
  *
-*/
-
+ */
 
 class ApiError extends Error {
   statusCode: number;

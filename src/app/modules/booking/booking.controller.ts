@@ -29,6 +29,7 @@ const makeBooking = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+
 // make booking product
 const updateBookingDeliveryDate = catchAsync(
   async (req: Request, res: Response) => {

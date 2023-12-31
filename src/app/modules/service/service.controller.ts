@@ -1,3 +1,12 @@
+/**
+ * Title: 'serivice controller '
+ * Description: ''
+ * Author: 'Masum Rana'
+ * Date: 31-12-2023
+ *
+*/
+
+
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';
 import { ServiceService } from './service.service';
@@ -6,7 +15,7 @@ import httpStatus from 'http-status';
 import sendResponse from '../../../shared/sendResponse';
 import pick from '../../../shared/pick';
 import { serviceFilterAbleField } from './service.constant';
-import { paginationHelpers } from '../../../helper/paginationHelper';
+import { paginationFields } from '../../../constant/pagination';
 
 // create service
 const createService = catchAsync(async (req: Request, res: Response) => {
@@ -39,7 +48,7 @@ const getSingleService = catchAsync(async (req: Request, res: Response) => {
 // get All Service
 const getAllService = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, serviceFilterAbleField);
-  const paginationOption = pick(req.query, paginationHelpers.paginationFields);
+  const paginationOption = pick(req.query, paginationFields);
   const result = await ServiceService.getAllService(filters, paginationOption);
 
   sendResponse<IService[]>(res, {

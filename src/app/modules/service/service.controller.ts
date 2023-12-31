@@ -4,8 +4,7 @@
  * Author: 'Masum Rana'
  * Date: 31-12-2023
  *
-*/
-
+ */
 
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';

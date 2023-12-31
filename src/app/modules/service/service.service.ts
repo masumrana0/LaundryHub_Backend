@@ -7,14 +7,12 @@
  */
 
 import { SortOrder } from 'mongoose';
-import {
-  IPaginationOptions,
-  paginationHelpers,
-} from '../../../helper/paginationHelper';
+import { paginationHelpers } from '../../../helper/paginationHelper';
 import { serviceFilterAbleField } from './service.constant';
 import { IService, IServiceFilterAbleFiled } from './service.interface';
 import { Service } from './service.model';
 import { IGenericResponse } from '../../../shared/sendResponse';
+import { IPaginationOptions } from '../../../inerfaces/pagination';
 
 // createService
 const createService = async (payload: IService): Promise<IService | null> => {
@@ -34,7 +32,7 @@ const getAllService = async (
   paginationOption: IPaginationOptions,
 ): Promise<IGenericResponse<IService[]> | null> => {
   const { searchTerm } = filters;
-  const { page, limit, skip, sortBy, sortOrder } =
+  const { page, limit, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOption);
 
   const andConditions = [];
@@ -58,7 +56,10 @@ const getAllService = async (
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Service.find(whereConditions);
+  const result = await Service.find(whereConditions)
+    .limit(limit)
+    .skip(5)
+    .sort(sortConditions);
 
   const total = await Service.countDocuments(whereConditions);
   return {

@@ -7,8 +7,8 @@
  */
 
 import express from 'express';
-import validateRequest from '../../middlewares/ValidateRequest';
-import { ServiceValidation } from './service.Validation';
+// import validateRequest from '../../middlewares/ValidateRequest';
+// import { ServiceValidation } from './service.Validation';
 import { ServiceController } from './service.controller';
 
 const router = express.Router();

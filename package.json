@@ -1,7 +1,7 @@
 {
-  "name": "project-setup",
+  "name": "LaundryHub",
   "version": "1.0.0",
-  "description": "Within the scope of this project, I integrated ESLint, Prettier, Husky, and lint-staged to uphold stringent standards for code quality and consistency. Furthermore, I established a connection to a MongoDB Atlas database.",
+  "description": " LaundryHub is a comprehensive solution for all your laundry needs. We offer professional washing, ironing, stain removal, and folding services tailored to keep your clothes fresh and pristine. With cutting-edge techniques and a customer-centric approach, we ensure quality care for customer garments, providing convenience and reliability.",
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",

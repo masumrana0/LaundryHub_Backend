@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';
-import sendResponse, { IApiResponse } from '../../../shared/sendResponse';
+import sendResponse from '../../../shared/sendResponse';
 import { IBooking } from './booking.interface';
 import httpStatus from 'http-status';
 import { BookingService } from './booking.service';
@@ -56,17 +56,18 @@ const getAllbookingData = catchAsync(async (req: Request, res: Response) => {
   const paginationOptions = pick(query, paginationHelpers.paginationFields);
   const filters = pick(query, BookingFilterAbleFiled);
   const result = await BookingService.getAllbooking(paginationOptions, filters);
-  sendResponse <
-    IApiResponse<IBooking | null>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Booking Cancel successfull !',
-      data: result,
-    });
+  sendResponse<IBooking[] | null>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Booking Cancel successfull !',
+    meta: result.meta,
+    data: result.data,
+  });
 });
 
 export const BookingController = {
   makeBooking,
   updateBookingDeliveryDate,
   cancelBooking,
+  getAllbookingData,
 };

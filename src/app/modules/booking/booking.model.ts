@@ -20,7 +20,7 @@ const ServiceSchema = new Schema<IBookingService>({
 const BookingSchema = new Schema<IBooking>({
   user: {
     type: Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true,
   },
   services: [ServiceSchema],
@@ -43,3 +43,7 @@ const BookingSchema = new Schema<IBooking>({
 });
 
 export const Booking = model<IBooking>('Booking', BookingSchema);
+export const ServiceBooking = model<IBookingService>(
+  'BookingService',
+  ServiceSchema,
+);

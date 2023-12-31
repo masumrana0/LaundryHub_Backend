@@ -1,4 +1,5 @@
 import { SortOrder } from 'mongoose';
+var async = require('async');
 import {
   IPaginationOptions,
   paginationHelpers,
@@ -7,7 +8,7 @@ import { IGenericResponse } from '../../../shared/sendResponse';
 import { IServiceFilterAbleFiled } from '../service/service.interface';
 import { BookingFilterAbleFiled } from './booking.constant';
 import { IBooking } from './booking.interface';
-import { Booking } from './booking.model';
+import { Booking, ServiceBooking } from './booking.model';
 
 // make booking
 const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
@@ -39,9 +40,6 @@ const getAllbooking = async (
   const { searchTerm } = filters;
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
-  // const Page = Number(page);
-  // const Limit = Number(limit);
-  // const Skip = Number(skip);
 
   const andConditions = [];
   if (searchTerm) {
@@ -63,13 +61,21 @@ const getAllbooking = async (
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Booking.find(whereConditions)
+  const result: IBooking[] = await Booking.find(whereConditions)
     .populate('user')
-    .populate('services.cleaningProduct')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
+  // Assuming 'result array' holds the fetched data
+  for (const booking of result) {
+    for (const service of booking.services) {
+      // Assuming `service.cleaningProduct` is the field to be populated
+      await ServiceBooking.populate(service, { path: 'cleaningProduct' });
+    }
+  }
+
+  // Count total documents
   const total = await Booking.countDocuments(whereConditions);
 
   return {

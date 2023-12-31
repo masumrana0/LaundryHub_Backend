@@ -11,21 +11,29 @@ import { ICleaningProduct } from './cleaningProduct.interface';
 import { cleaningProductCategory } from './cleaningProduct.constant';
 
 // Create a Mongoose schema for CleaningProduct
-const cleaningProductSchema = new Schema<ICleaningProduct>({
-  category: {
-    type: String,
-    enum: cleaningProductCategory,
-    required: true,
+const cleaningProductSchema = new Schema<ICleaningProduct>(
+  {
+    category: {
+      type: String,
+      enum: cleaningProductCategory,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
   },
-  name: {
-    type: String,
-    required: true,
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+);
 
 // Define and export the Mongoose model
 export const CleaningProduct = mongoose.model<ICleaningProduct>(

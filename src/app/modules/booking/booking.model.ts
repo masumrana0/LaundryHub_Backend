@@ -8,6 +8,7 @@ const ServiceSchema = new Schema<IBookingService>({
   },
   cleaningProduct: {
     type: Schema.Types.ObjectId,
+    ref: 'CleaningProduct',
     required: true,
   },
   cleaningProductItem: {

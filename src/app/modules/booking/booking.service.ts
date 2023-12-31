@@ -11,7 +11,7 @@ import { Booking } from './booking.model';
 
 // make booking
 const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
-  const result = await Booking.create(payload);
+  const result = (await Booking.create(payload)).populate('services.item');
   return result;
 };
 

@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post(
   '/',
-  validateRequest(BookingZodValidationSchema.BookingZodSchema),
+  // validateRequest(BookingZodValidationSchema.BookingZodSchema),
   BookingController.makeBooking,
 );
 

@@ -1,1 +1,1 @@
-export const BookingFilterAbleFiled=["service"]
+export const BookingFilterAbleFiled = ['service', 'searchTerm'];

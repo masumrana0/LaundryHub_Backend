@@ -21,3 +21,4 @@ export type IBookingFilterAbleFiled = {
   searchTerm?: string;
   service?: string;
 };
+                 

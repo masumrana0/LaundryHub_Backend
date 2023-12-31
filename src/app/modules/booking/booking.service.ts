@@ -1,13 +1,11 @@
 import { SortOrder } from 'mongoose';
-import {
-  IPaginationOptions,
-  paginationHelpers,
-} from '../../../helper/paginationHelper';
+import { paginationHelpers } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../shared/sendResponse';
 import { IServiceFilterAbleFiled } from '../service/service.interface';
 import { BookingFilterAbleFiled } from './booking.constant';
 import { IBooking } from './booking.interface';
 import { Booking, ServiceBooking } from './booking.model';
+import { IPaginationOptions } from '../../../inerfaces/pagination';
 
 // make booking
 const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
@@ -85,7 +83,6 @@ const getAllbooking = async (
     meta: {
       page,
       limit,
-      skip,
       total,
     },
     data: result,

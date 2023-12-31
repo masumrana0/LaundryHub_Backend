@@ -1,16 +1,36 @@
-import { Schema, model } from 'mongoose';
-import { IService } from './service.interface';
+import { Schema, Types, model } from 'mongoose';
+import { IReview, IService } from './service.interface';
+
+const ReviewSchema = new Schema<IReview>({
+  user: {
+    type: Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+  review: {
+    type: String,
+    required: true,
+  },
+});
 
 const ServiceSchema = new Schema<IService>({
-  title: { type: String, required: true },
-  img: { type: String, required: true },
-  details: [{ type: String }],
-  reviews: [
+  title: {
+    type: String,
+    required: true,
+  },
+  images: [
     {
-      name: { type: String, required: true },
-      review: { type: String, required: true },
+      type: String,
+      required: true,
     },
   ],
+  details: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
+  reviews: [ReviewSchema],
 });
 
 export const Service = model<IService>('Service', ServiceSchema);

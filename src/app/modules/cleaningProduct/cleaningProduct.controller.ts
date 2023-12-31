@@ -35,7 +35,44 @@ const getAllCleaningProduct = catchAsync(
   },
 );
 
+// get All Cleaning Product
+const updateCleaningProduct = catchAsync(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    // console.log(id)
+    const { ...updatedData } = req.body;
+    const result = await cleaningProductService.updateCleaningProduct(
+      updatedData,
+      id,
+    );
+
+    sendResponse<ICleaningProduct>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Cleaning Product update successfully !',
+      data: result,
+    });
+  },
+);
+
+// delete Cleaning Product
+const deleteCleaningProduct = catchAsync(
+  async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const result = await cleaningProductService.deleteCleaningProduct(id);
+
+    sendResponse<ICleaningProduct>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Cleaning Product delete successfully !',
+      data: result,
+    });
+  },
+);
+
 export const cleaningProductController = {
   createCleaningProduct,
   getAllCleaningProduct,
+  updateCleaningProduct,
+  deleteCleaningProduct,
 };

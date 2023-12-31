@@ -15,7 +15,29 @@ const getAllCleaningProduct = async (): Promise<ICleaningProduct[] | null> => {
   return result;
 };
 
+// update  Laundry Cleaning product Data
+const updateCleaningProduct = async (
+  payload: Partial<ICleaningProduct>,
+  id: string,
+): Promise<ICleaningProduct | null> => {
+  const result = await CleaningProduct.findByIdAndUpdate(id, payload, {
+    new: true,
+  });
+
+  return result;
+};
+
+// delete laundry Cleaning Product
+const deleteCleaningProduct = async (
+  id: string,
+): Promise<ICleaningProduct | null> => {
+  const result = await CleaningProduct.findByIdAndDelete(id);
+  return result;
+};
+
 export const cleaningProductService = {
   createCleaningProduct,
   getAllCleaningProduct,
+  updateCleaningProduct,
+  deleteCleaningProduct,
 };

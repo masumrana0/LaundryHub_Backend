@@ -58,7 +58,7 @@ const getAllService = async (
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Service.find(whereConditions).skip(skip).limit(limit);
+  const result = await Service.find(whereConditions);
 
   const total = await Service.countDocuments(whereConditions);
   return {

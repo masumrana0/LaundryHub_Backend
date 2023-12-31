@@ -12,43 +12,51 @@ import { userRole } from './user.constant';
 import bcrypt from 'bcrypt';
 import config from '../../../config';
 
-const UserSchema = new Schema<IUser, UserModel>({
-  name: {
-    type: {
-      firstName: {
-        type: String,
-        required: true,
+const UserSchema = new Schema<IUser, UserModel>(
+  {
+    name: {
+      type: {
+        firstName: {
+          type: String,
+          required: true,
+        },
+        lastName: {
+          type: String,
+        },
       },
-      lastName: {
-        type: String,
-      },
+      required: true,
     },
-    required: true,
+    role: {
+      type: String,
+      enum: userRole,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      // unique: true,
+    },
+    phoneNumber: {
+      type: String,
+      // unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      select: 0,
+    },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
   },
-  role: {
-    type: String,
-    enum: userRole,
-    required: true,
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   },
-  email: {
-    type: String,
-    required: true,
-    // unique: true,
-  },
-  phoneNumber: {
-    type: String,
-    // unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-    select: 0,
-  },
-  isEmailVerified: {
-    type: Boolean,
-    default: false,
-  },
-});
+);
 
 UserSchema.pre('save', async function (next) {
   // hasning user password

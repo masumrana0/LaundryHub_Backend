@@ -1,5 +1,4 @@
 import { SortOrder } from 'mongoose';
-var async = require('async');
 import {
   IPaginationOptions,
   paginationHelpers,
@@ -12,7 +11,11 @@ import { Booking, ServiceBooking } from './booking.model';
 
 // make booking
 const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
-  const result = (await Booking.create(payload)).populate('services.item');
+  const result = await Booking.create(payload);
+  for (const service of result.services) {
+    // Assuming `service.cleaningProduct` is the field to be populated
+    await ServiceBooking.populate(service, { path: 'cleaningProduct' });
+  }
   return result;
 };
 
@@ -76,7 +79,7 @@ const getAllbooking = async (
   }
 
   // Count total documents
-  const total = await Booking.countDocuments(whereConditions);
+  const total = await Booking.countDocuments({});
 
   return {
     meta: {

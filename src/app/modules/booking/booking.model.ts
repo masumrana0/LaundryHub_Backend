@@ -17,30 +17,38 @@ const ServiceSchema = new Schema<IBookingService>({
   },
 });
 
-const BookingSchema = new Schema<IBooking>({
-  user: {
-    type: Types.ObjectId,
-    ref: 'user',
-    required: true,
+const BookingSchema = new Schema<IBooking>(
+  {
+    user: {
+      type: Types.ObjectId,
+      ref: 'user',
+      required: true,
+    },
+    services: [ServiceSchema],
+    grandPrice: {
+      type: Number,
+      required: true,
+    },
+    bookingDate: {
+      type: Date,
+      required: true,
+    },
+    deliveryDate: {
+      type: Date,
+      required: true,
+    },
+    isDelivered: {
+      type: Boolean,
+      default: false,
+    },
   },
-  services: [ServiceSchema],
-  grandPrice: {
-    type: Number,
-    required: true,
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   },
-  bookingDate: {
-    type: Date,
-    required: true,
-  },
-  deliveryDate: {
-    type: Date,
-    required: true,
-  },
-  isDelivered: {
-    type: Boolean,
-    default: false,
-  },
-});
+);
 
 export const Booking = model<IBooking>('Booking', BookingSchema);
 export const ServiceBooking = model<IBookingService>(

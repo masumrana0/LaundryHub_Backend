@@ -1,3 +1,11 @@
+/**
+ * Title: 'Booking Service'
+ * Description: 'In this Booking Services page I will doing make booking, getAllBookig, updatebooking and delete booking'
+ * Author: 'Masum Rana'
+ * Date: 31-12-2023
+ *
+ */
+
 import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helper/paginationHelper';
 import { IGenericResponse } from '../../../shared/sendResponse';
@@ -62,13 +70,14 @@ const getAllbooking = async (
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
+  // Assuming 'result array' holds the fetched data
   const result: IBooking[] = await Booking.find(whereConditions)
     .populate('user')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
-  // Assuming 'result array' holds the fetched data
+  // populate nested fileďs
   for (const booking of result) {
     for (const service of booking.services) {
       // Assuming `service.cleaningProduct` is the field to be populated
@@ -76,7 +85,7 @@ const getAllbooking = async (
     }
   }
 
-  // Count total documents
+  // Count total booking data
   const total = await Booking.countDocuments({});
 
   return {

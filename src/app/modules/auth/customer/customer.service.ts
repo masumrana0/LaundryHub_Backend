@@ -13,7 +13,7 @@ import ApiError from '../../../../errors/ApiError';
 import { jwtHelpers } from '../../../../helper/jwtHelpers';
 import { IUser } from '../../user/user.interface';
 import { User } from '../../user/user.model';
-import { ILoginUser, ILoginUserResponse } from './auth.interface';
+import { ILoginUser, ILoginUserResponse } from '../auth.interface';
 
 // user registration
 const userRegistration = async (

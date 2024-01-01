@@ -1,9 +1,9 @@
-import httpStatus from 'http-status';
 import { Request, Response } from 'express';
-import catchAsync from '../../../../shared/catchAsync';
-import { ILoginUserResponse } from '../customer/auth.interface';
-import sendResponse from '../../../../shared/sendResponse';
+import httpStatus from 'http-status';
 import config from '../../../../config';
+import catchAsync from '../../../../shared/catchAsync';
+import sendResponse from '../../../../shared/sendResponse';
+import { ILoginUserResponse } from '../auth.interface';
 import { AdminService } from './admin.service';
 
 // user registration with login

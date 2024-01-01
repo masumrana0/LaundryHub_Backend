@@ -11,8 +11,8 @@ import httpStatus from 'http-status';
 import config from '../../../../config';
 import catchAsync from '../../../../shared/catchAsync';
 import sendResponse from '../../../../shared/sendResponse';
-import { ILoginUserResponse } from './auth.interface';
-import { AuthService } from './auth.service';
+import { ILoginUserResponse } from '../auth.interface';
+import { AuthService } from './customer.service';
 
 // user registration with login
 const userRegistration = catchAsync(async (req: Request, res: Response) => {

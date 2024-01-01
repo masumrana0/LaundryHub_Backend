@@ -9,19 +9,13 @@
 import express from 'express';
 import validateRequest from '../../../middlewares/ValidateRequest';
 import { authValidationSchema } from '../auth.validation';
-import { AuthController } from './customer.controller';
-
+import { CustomerController } from './customer.controller';
 const router = express.Router();
 
 router.post(
   '/register',
   validateRequest(authValidationSchema.customerRegisterZodSchema),
-  AuthController.userRegistration,
+  CustomerController.customerRegistration,
 );
 
-router.post(
-  '/login',
-  validateRequest(authValidationSchema.userLoginZodSchema),
-  AuthController.loginUser,
-);
 export const CustomerthRoutes = router;

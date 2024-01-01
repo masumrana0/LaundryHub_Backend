@@ -4,10 +4,15 @@ import { CleaningProductRoutes } from '../modules/cleaningProduct/cleaningProduc
 import { ServiceRoutes } from '../modules/service/service.route';
 import { AdminRoutes } from '../modules/auth/admin/admin.route';
 import { CustomerthRoutes } from '../modules/auth/customer/customer.route';
+import { AuthRoutes } from '../modules/auth/auth.route';
 
 const router = express.Router();
 
 const moduleRoutes = [
+  {
+    path: '/auth',
+    route: AuthRoutes,
+  },
   {
     path: '/auth/customer',
     route: CustomerthRoutes,

@@ -10,10 +10,5 @@ router.post(
   validateRequest(authValidationSchema.adminRegisterZodSchema),
   AdminController.adminRegistration,
 );
-router.post(
-  '/login',
-  validateRequest(authValidationSchema.userLoginZodSchema),
-  AdminController.adminLogin,
-);
 
 export const AdminRoutes = router;

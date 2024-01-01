@@ -74,9 +74,31 @@ const getAllbookingData = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// get booking  data
+const getSpecificUserBookingData = catchAsync(
+  async (req: Request, res: Response) => {
+    const query = req.query;
+    const { userId } = req.params;
+    const paginationOptions = pick(query, paginationFields);
+
+    const result = await BookingService.getSpecificUserBookingData(
+      paginationOptions,
+      userId,
+    );
+    sendResponse<IBooking[] | null>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Booking fatched successfull !',
+      meta: result.meta,
+      data: result.data,
+    });
+  },
+);
+
 export const BookingController = {
   makeBooking,
   updateBookingDeliveryDate,
   cancelBooking,
   getAllbookingData,
+  getSpecificUserBookingData,
 };

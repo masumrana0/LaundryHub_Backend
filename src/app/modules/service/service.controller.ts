@@ -59,8 +59,23 @@ const getAllService = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// get All Service
+const makeReview = catchAsync(async (req: Request, res: Response) => {
+  const { ...review } = req.body;
+  const { serviceId } = req.params;
+  const result = await ServiceService.createReview(serviceId, review);
+
+  sendResponse<IService>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Review added successfully !',
+    data: result,
+  });
+});
+
 export const ServiceController = {
   createService,
   getSingleService,
   getAllService,
+  makeReview,
 };

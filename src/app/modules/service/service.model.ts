@@ -42,3 +42,4 @@ const ServiceSchema = new Schema<IService>(
 );
 
 export const Service = model<IService>('Service', ServiceSchema);
+export const Review = model<IReview>('review', ReviewSchema);

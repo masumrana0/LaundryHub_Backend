@@ -9,10 +9,16 @@
 import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helper/paginationHelper';
 import { serviceFilterAbleField } from './service.constant';
-import { IService, IServiceFilterAbleFiled } from './service.interface';
-import { Service } from './service.model';
+import {
+  IReview,
+  IService,
+  IServiceFilterAbleFiled,
+} from './service.interface';
+import { Review, Service } from './service.model';
 import { IGenericResponse } from '../../../shared/sendResponse';
 import { IPaginationOptions } from '../../../inerfaces/pagination';
+import ApiError from '../../../errors/ApiError';
+import httpStatus from 'http-status';
 
 // createService
 const createService = async (payload: IService): Promise<IService | null> => {
@@ -72,8 +78,31 @@ const getAllService = async (
   };
 };
 
+// createReview
+const createReview = async (
+  serviceId: string,
+  review: IReview,
+): Promise<IService | null> => {
+  const service = await Service.findById(serviceId);
+  if (!service) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Service not found');
+  }
+
+  // Create a new review based on the ReviewSchema
+  const newReview = new Review(review);
+
+  // Push the new review to the service's reviews array
+  service.reviews.push(newReview);
+
+  // Save the updated service with the new review
+  await service.save();
+
+  return service;
+};
+
 export const ServiceService = {
   createService,
   getSingleService,
   getAllService,
+  createReview,
 };

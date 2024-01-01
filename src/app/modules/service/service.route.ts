@@ -23,6 +23,14 @@ router.post(
   ServiceController.createService,
 );
 
+// create Review
+router.post(
+  '/review',
+  auth(ENUM_USER_ROLE.CUSTOMER),
+  validateRequest(ServiceValidation.reviewSchema),
+  ServiceController.makeReview,
+);
+
 // get Single service
 router.get(
   '/:id',

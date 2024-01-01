@@ -99,9 +99,65 @@ const getAllbooking = async (
   };
 };
 
+// get all Booking
+const getSpecificUserBookingData = async (
+  paginationOptions: IPaginationOptions,
+  id: string,
+): Promise<IGenericResponse<IBooking[] | null>> => {
+  // pagination essentials
+  const { page, limit, skip, sortBy, sortOrder } =
+    paginationHelpers.calculatePagination(paginationOptions);
+
+  // Dynamic Sort needs field to do sorting
+  const sortConditions: { [key: string]: SortOrder } = {};
+  if (sortBy && sortOrder) {
+    sortConditions[sortBy] = sortOrder;
+  }
+
+  // Fetching data using find method
+  const result = await Booking.findById(id)
+    .populate('user')
+    .sort(sortConditions)
+    .skip(skip)
+    .limit(limit);
+
+  console.log(result);
+  if (!result) {
+    return {
+      meta: {
+        page,
+        limit,
+        total: 0,
+      },
+      data: null,
+    };
+  }
+
+  // populate nested fields
+  for (const booking of result) {
+    for (const service of booking.services) {
+      // Assuming `service.cleaningProduct` is the field to be populated
+      await ServiceBooking.populate(service, { path: 'cleaningProduct' });
+    }
+  }
+
+  // Count total booking data
+  const total = await Booking.countDocuments({});
+
+  return {
+    meta: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  };
+};
+
 export const BookingService = {
   makeBooking,
   updateBookingDeliveryDate,
   cancelBooking,
   getAllbooking,
+  getSpecificUserBookingData,
 };

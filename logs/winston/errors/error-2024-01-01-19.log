@@ -1,0 +1,585 @@
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:02:58.708Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 1,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:03:58.562Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:09:05.390Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:13:12.361Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          provider: 'AWS',
+          nodeType: 'ELECTABLE',
+          region: 'US_EAST_1',
+          workloadType: 'OPERATIONAL',
+          availabilityZone: 'use1-az4'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 1119.3200000000002,
+        lastUpdateTime: 175274419,
+        lastWriteDate: 2024-01-01T13:14:59.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a640b720e5ec65cb8246'),
+          counter: 4
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704114899, i: 15 }),
+          signature: {
+            hash: Binary.createFromBase64('um9rNfEkd+/RClUSzwTl+I9RIM4=', 0),
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      },
+      'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 175273264,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017
+            at connectionFailureError (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:629:26)
+            at TLSSocket.emit (node:events:514:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: connect ETIMEDOUT 3.83.210.104:27017
+              at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+            errno: -4039,
+            code: 'ETIMEDOUT',
+            syscall: 'connect',
+            address: '3.83.210.104',
+            port: 27017
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          availabilityZone: 'use1-az1',
+          nodeType: 'ELECTABLE',
+          workloadType: 'OPERATIONAL',
+          provider: 'AWS',
+          region: 'US_EAST_1'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 739.5200000000001,
+        lastUpdateTime: 175273897,
+        lastWriteDate: 2024-01-01T13:14:59.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a9d1450f5ed15d588c00'),
+          counter: 3
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704114899, i: 1 }),
+          signature: {
+            hash: Binary.createFromBase64('um9rNfEkd+/RClUSzwTl+I9RIM4=', 0),
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-wel4a8-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:805:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:780:11)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at Run (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\src\\server.ts:24:5)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:15:07.860Z'
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:18:31.031Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          nodeType: 'ELECTABLE',
+          provider: 'AWS',
+          workloadType: 'OPERATIONAL',
+          region: 'US_EAST_1',
+          availabilityZone: 'use1-az4'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 743.76,
+        lastUpdateTime: 175516291,
+        lastWriteDate: 2024-01-01T13:19:01.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a640b720e5ec65cb8246'),
+          counter: 4
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704115141, i: 9 }),
+          signature: {
+            hash: Binary.createFromBase64('R3cG9Ut6Ov5/1YLTWBcJscm/aL8=', 0),
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      },
+      'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 175515670,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017
+            at connectionFailureError (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:629:26)
+            at TLSSocket.emit (node:events:514:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: connect ETIMEDOUT 3.83.210.104:27017
+              at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+            errno: -4039,
+            code: 'ETIMEDOUT',
+            syscall: 'connect',
+            address: '3.83.210.104',
+            port: 27017
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          provider: 'AWS',
+          nodeType: 'ELECTABLE',
+          region: 'US_EAST_1',
+          workloadType: 'OPERATIONAL',
+          availabilityZone: 'use1-az1'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 859,
+        lastUpdateTime: 175517048,
+        lastWriteDate: 2024-01-01T13:19:02.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a9d1450f5ed15d588c00'),
+          counter: 3
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704115142, i: 3 }),
+          signature: {
+            hash: <Buffer 75 53 5b c2 cf 7c b1 9f 98 9e ae bb 4d 91 8e f7 fd 65 11 7a>,
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-wel4a8-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:805:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:780:11)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at Run (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\src\\server.ts:24:5)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:19:10.283Z'
+}
+{
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          provider: 'AWS',
+          nodeType: 'ELECTABLE',
+          region: 'US_EAST_1',
+          workloadType: 'OPERATIONAL',
+          availabilityZone: 'use1-az4'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 723.88,
+        lastUpdateTime: 175662330,
+        lastWriteDate: 2024-01-01T13:21:27.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a640b720e5ec65cb8246'),
+          counter: 4
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704115287, i: 11 }),
+          signature: {
+            hash: Binary.createFromBase64('ooqV+skFprZ88w/MeLrfb+VdPBY=', 0),
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      },
+      'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        lastUpdateTime: 175661744,
+        lastWriteDate: 0,
+        error: MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017
+            at connectionFailureError (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:505:14)
+            at TLSSocket.<anonymous> (C:\Users\Masum-Rana\Documents\Next level Web Development\assignment-9\laundryhub-backend\node_modules\mongodb\src\cmap\connect.ts:388:16)
+            at Object.onceWrapper (node:events:629:26)
+            at TLSSocket.emit (node:events:514:28)
+            at emitErrorNT (node:internal/streams/destroy:151:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+          [cause]: Error: connect ETIMEDOUT 3.83.210.104:27017
+              at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16) {
+            errno: -4039,
+            code: 'ETIMEDOUT',
+            syscall: 'connect',
+            address: '3.83.210.104',
+            port: 27017
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null
+      },
+      'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017' => ServerDescription {
+        address: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-jkqasbk-shard-00-00.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+          'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          nodeType: 'ELECTABLE',
+          workloadType: 'OPERATIONAL',
+          availabilityZone: 'use1-az1',
+          provider: 'AWS',
+          region: 'US_EAST_1'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 17,
+        roundTripTime: 533.1200000000001,
+        lastUpdateTime: 175662339,
+        lastWriteDate: 2024-01-01T13:21:27.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6592a9d1450f5ed15d588c00'),
+          counter: 3
+        },
+        setName: 'atlas-wel4a8-shard-0',
+        setVersion: 8,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        primary: 'ac-jkqasbk-shard-00-01.w9y9xep.mongodb.net:27017',
+        me: 'ac-jkqasbk-shard-00-02.w9y9xep.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1704115287, i: 11 }),
+          signature: {
+            hash: Binary.createFromBase64('ooqV+skFprZ88w/MeLrfb+VdPBY=', 0),
+            keyId: new Long('7276010049254719490')
+          }
+        }
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-wel4a8-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at _handleConnectionErrors (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:805:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongoose\\lib\\connection.js:780:11)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at Run (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\src\\server.ts:24:5)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:21:36.356Z'
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:26:45.811Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:34:35.154Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:36:17.244Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}
+{
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'something is wrong connect ETIMEDOUT 3.83.210.104:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 3.83.210.104:27017\n' +
+    '    at connectionFailureError (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:505:14)\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:388:16)\n' +
+    '    at Object.onceWrapper (node:events:629:26)\n' +
+    '    at TLSSocket.emit (node:events:514:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:151:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:116:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  label: 'right meow!',
+  timestamp: '2024-01-01T13:44:18.134Z',
+  [Symbol(errorLabels)]: Set(1) { 'ResetPool' }
+}

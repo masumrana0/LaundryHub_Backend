@@ -7,8 +7,8 @@
  */
 
 import express from 'express';
-// import validateRequest from '../../middlewares/ValidateRequest';
-// import { ServiceValidation } from './service.Validation';
+import validateRequest from '../../middlewares/ValidateRequest';
+import { ServiceValidation } from './service.Validation';
 import { ServiceController } from './service.controller';
 
 const router = express.Router();
@@ -16,7 +16,7 @@ const router = express.Router();
 // create service by admin
 router.post(
   '/',
-  //   validateRequest(ServiceValidation.serviceValidationSchema),
+  validateRequest(ServiceValidation.serviceValidationSchema),
   ServiceController.createService,
 );
 
@@ -25,4 +25,5 @@ router.get('/:id', ServiceController.getSingleService);
 
 // get All Service
 router.get('/', ServiceController.getAllService);
+
 export const ServiceRoutes = router;

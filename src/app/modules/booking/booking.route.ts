@@ -1,13 +1,13 @@
 import express from 'express';
-// import validateRequest from '../../middlewares/ValidateRequest';
-// import { BookingZodValidationSchema } from './bookingValidation';
+import validateRequest from '../../middlewares/ValidateRequest';
+import { BookingZodValidationSchema } from './bookingValidation';
 import { BookingController } from './booking.controller';
 
 const router = express.Router();
 
 router.post(
   '/',
-  // validateRequest(BookingZodValidationSchema.BookingZodSchema),
+  validateRequest(BookingZodValidationSchema.BookingZodSchema),
   BookingController.makeBooking,
 );
 

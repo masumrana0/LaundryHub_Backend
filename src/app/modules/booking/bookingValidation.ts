@@ -13,10 +13,10 @@ const BookingZodSchema = z.object({
     services: z.array(ServiceSchema, {
       required_error: 'user service is required for booking',
     }),
-    grandPrice: z.number(),
-    bookingDate: z.date(),
-    address: z.string(),
-    deliveryDate: z.date(),
+    grandPrice: z.number({ required_error: 'grandPrice is required' }),
+    address: z.string({ required_error: 'address is required' }),
+    bookingDate: z.string({ required_error: 'bookingDate is required' }),
+    deliveryDate: z.string({ required_error: 'deliveryDate is required' }),
   }),
 });
 

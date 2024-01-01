@@ -27,7 +27,7 @@ const globalErrorHandler: ErrorRequestHandler = (
   next: NextFunction,
 ) => {
   config.env === 'development'
-    ? console.log('Error')
+    ? console.log('Error', error)
     : errorLogger.error(`😒 globalErrorHandler ~~`, error);
 
   let statusCode = 500;

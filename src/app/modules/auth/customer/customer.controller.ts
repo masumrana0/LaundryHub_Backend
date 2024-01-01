@@ -14,7 +14,7 @@ import sendResponse from '../../../../shared/sendResponse';
 import { ILoginUserResponse } from '../auth.interface';
 import { CustomerService } from './customer.service';
 
-// user registration with login
+// customer registration with login
 const customerRegistration = catchAsync(async (req: Request, res: Response) => {
   const { ...userData } = req.body;
   const result = await CustomerService.customerRegistration(userData);

@@ -1,5 +1,5 @@
 /**
- * Title: 'Authentication router'
+ * Title: 'Customer Authentication router'
  * Description: 'set authentication router'
  * Author: 'Masum Rana'
  * Date: 29-12-2023

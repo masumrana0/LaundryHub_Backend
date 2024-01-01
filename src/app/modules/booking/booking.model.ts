@@ -41,6 +41,10 @@ const BookingSchema = new Schema<IBooking>(
       type: String,
       required: true,
     },
+    isApproved: {
+      type: Boolean,
+      default: false,
+    },
     isDelivered: {
       type: Boolean,
       default: false,

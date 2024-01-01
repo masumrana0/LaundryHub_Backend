@@ -15,6 +15,7 @@ export type IBooking = {
   bookingDate: Date;
   deliveryDate: Date;
   address: string;
+  isApproved: boolean;
   isDelivered: boolean;
 };
 

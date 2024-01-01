@@ -59,7 +59,7 @@ const getAllService = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// get All Service
+// make revire in specific service
 const makeReview = catchAsync(async (req: Request, res: Response) => {
   const { ...review } = req.body;
   const { serviceId } = req.params;

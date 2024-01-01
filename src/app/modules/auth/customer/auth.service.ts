@@ -7,13 +7,13 @@
  */
 
 import httpStatus from 'http-status';
-import ApiError from '../../../errors/ApiError';
-import { IUser } from '../user/user.interface';
-import { User } from '../user/user.model';
-import { ILoginUser, ILoginUserResponse } from './auth.interface';
-import { jwtHelpers } from '../../../helper/jwtHelpers';
-import config from '../../../config';
 import { Secret } from 'jsonwebtoken';
+import config from '../../../../config';
+import ApiError from '../../../../errors/ApiError';
+import { jwtHelpers } from '../../../../helper/jwtHelpers';
+import { IUser } from '../../user/user.interface';
+import { User } from '../../user/user.model';
+import { ILoginUser, ILoginUserResponse } from './auth.interface';
 
 // user registration
 const userRegistration = async (

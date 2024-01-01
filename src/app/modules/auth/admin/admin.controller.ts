@@ -1,23 +1,15 @@
-/**
- * Title: 'authentication controller'
- * Description: ''
- * Author: 'Masum Rana'
- * Date: 29-12-2023
- *
- */
-
 import httpStatus from 'http-status';
-import catchAsync from '../../../shared/catchAsync';
-import sendResponse from '../../../shared/sendResponse';
-import { AuthService } from './auth.service';
-import { ILoginUserResponse } from './auth.interface';
-import config from '../../../config';
 import { Request, Response } from 'express';
+import catchAsync from '../../../../shared/catchAsync';
+import { ILoginUserResponse } from '../customer/auth.interface';
+import sendResponse from '../../../../shared/sendResponse';
+import config from '../../../../config';
+import { AdminService } from './admin.service';
 
 // user registration with login
-const userRegistration = catchAsync(async (req: Request, res: Response) => {
+const adminRegistration = catchAsync(async (req: Request, res: Response) => {
   const { ...userData } = req.body;
-  const result = await AuthService.userRegistration(userData);
+  const result = await AdminService.adminRegistration(userData);
   const { refreshToken, accessToken, isEmailVerified } = result;
   const responseData = { accessToken, isEmailVerified };
   // set refresh token into cookie
@@ -25,7 +17,6 @@ const userRegistration = catchAsync(async (req: Request, res: Response) => {
     secure: config.env === 'production',
     httpOnly: true,
   };
-
   res.cookie('refreshToken', refreshToken, cookieOptions);
 
   sendResponse<ILoginUserResponse>(res, {
@@ -37,9 +28,9 @@ const userRegistration = catchAsync(async (req: Request, res: Response) => {
 });
 
 // Login user
-const loginUser = catchAsync(async (req: Request, res: Response) => {
+const adminLogin = catchAsync(async (req: Request, res: Response) => {
   const { ...loginData } = req.body;
-  const result = await AuthService.loginUser(loginData);
+  const result = await AdminService.adminLogin(loginData);
   const { refreshToken, accessToken, isEmailVerified } = result;
   const responseData = { accessToken, isEmailVerified };
   // set refresh token into cookie
@@ -58,7 +49,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const AuthController = {
-  userRegistration,
-  loginUser,
+export const AdminController = {
+  adminRegistration,
+  adminLogin,
 };

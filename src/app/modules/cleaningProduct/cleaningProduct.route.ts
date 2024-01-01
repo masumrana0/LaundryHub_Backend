@@ -17,4 +17,4 @@ router.patch('/:id', cleaningProductController.updateCleaningProduct);
 
 router.delete('/:id', cleaningProductController.deleteCleaningProduct);
 
-export const cleaningProductRoutes = router;
+export const CleaningProductRoutes = router;

@@ -7,24 +7,49 @@
  */
 
 import z from 'zod';
-import { userRole } from '../user/user.constant';
+// import { userRole } from '../user/user.constant';
 
-// User registration validation schema
-const registerUserZodSchema = z.object({
+// customer registration validation schema
+const customerRegisterZodSchema = z.object({
   body: z.object({
     name: z.object({
       firstName: z.string(),
       lastName: z.string().optional(),
     }),
-    role: z.enum(['', ...userRole]).optional(),
     phoneNumber: z.string(),
     email: z.string().email(),
     password: z.string(),
   }),
 });
 
-// User login validation schema
-const loginUserZodSchema = z.object({
+// customer login validation schema
+const customerLoginZodSchema = z.object({
+  body: z.object({
+    email: z
+      .string({ required_error: 'Email is required' })
+      .email({ message: 'Invalid email format' }),
+    password: z.string({
+      required_error: 'Password is required',
+    }),
+  }),
+});
+
+// admin registration validation schema
+const adminRegisterZodSchema = z.object({
+  body: z.object({
+    name: z.object({
+      firstName: z.string(),
+      lastName: z.string().optional(),
+    }),
+
+    phoneNumber: z.string(),
+    email: z.string().email(),
+    password: z.string(),
+  }),
+});
+
+// admin login validation schema
+const adminLoginZodSchema = z.object({
   body: z.object({
     email: z
       .string({ required_error: 'Email is required' })
@@ -36,6 +61,8 @@ const loginUserZodSchema = z.object({
 });
 
 export const authValidationSchema = {
-  registerUserZodSchema,
-  loginUserZodSchema,
+  customerRegisterZodSchema,
+  customerLoginZodSchema,
+  adminLoginZodSchema,
+  adminRegisterZodSchema,
 };

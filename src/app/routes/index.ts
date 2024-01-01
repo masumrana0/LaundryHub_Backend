@@ -1,15 +1,20 @@
 import express from 'express';
-import { authRoutes } from '../modules/auth/auth.route';
-import { ServiceRoutes } from '../modules/service/service.route';
-import { cleaningProductRoutes } from '../modules/cleaningProduct/cleaningProduct.route';
+import { AuthRoutes } from '../modules/auth/customer/auth.route';
 import { BookingRoutes } from '../modules/booking/booking.route';
+import { CleaningProductRoutes } from '../modules/cleaningProduct/cleaningProduct.route';
+import { ServiceRoutes } from '../modules/service/service.route';
+import { AdminRoutes } from '../modules/auth/admin/admin.route';
 
 const router = express.Router();
 
 const moduleRoutes = [
   {
-    path: '/auth',
-    route: authRoutes,
+    path: '/auth/customer',
+    route: AuthRoutes,
+  },
+  {
+    path: '/auth/admin',
+    router: AdminRoutes,
   },
   {
     path: '/service',
@@ -17,7 +22,7 @@ const moduleRoutes = [
   },
   {
     path: '/cleaningproduct',
-    route: cleaningProductRoutes,
+    route: CleaningProductRoutes,
   },
   {
     path: '/booking',

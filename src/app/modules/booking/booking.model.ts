@@ -37,6 +37,10 @@ const BookingSchema = new Schema<IBooking>(
       type: Date,
       required: true,
     },
+    address: {
+      type: String,
+      required: true,
+    },
     isDelivered: {
       type: Boolean,
       default: false,

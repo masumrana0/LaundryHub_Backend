@@ -14,6 +14,7 @@ export type IBooking = {
   grandPrice: number;
   bookingDate: Date;
   deliveryDate: Date;
+  address: string;
   isDelivered: boolean;
 };
 

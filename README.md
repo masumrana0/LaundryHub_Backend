@@ -57,3 +57,19 @@
 "reviews:[{name,review}]
 
 ```
+
+## Service Booking Data Pattern
+
+```json
+{
+  "user": "6591648ebb7cf45d58620a5b",
+  "services": {
+    "service": "Wash & Iron",
+    "cleaningProduct": "65901e764b27c10abeb0bfb7",
+    "cleaningProductItem": 1
+  },
+  "grandPrice": 150,
+  "bookingDate": "2023-12-31",
+  "deliveryDate": "2024-01-03"
+}
+```

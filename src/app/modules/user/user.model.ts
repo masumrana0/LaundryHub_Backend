@@ -34,11 +34,11 @@ const UserSchema = new Schema<IUser, UserModel>(
     email: {
       type: String,
       required: true,
-      // unique: true,
+      unique: true,
     },
     phoneNumber: {
       type: String,
-      // unique: true,
+      unique: true,
     },
     password: {
       type: String,

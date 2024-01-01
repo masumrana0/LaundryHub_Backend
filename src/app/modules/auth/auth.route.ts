@@ -7,21 +7,21 @@
  */
 
 import express from 'express';
-// import validateRequest from '../../middlewares/ValidateRequest';
-// import { authValidationSchema } from './auth.validation';
+import validateRequest from '../../middlewares/ValidateRequest';
+import { authValidationSchema } from './auth.validation';
 import { AuthController } from './auth.controller';
 
 const router = express.Router();
 
 router.post(
   '/register',
-  // validateRequest(authValidationSchema.registerUserZodSchema),
+  validateRequest(authValidationSchema.registerUserZodSchema),
   AuthController.userRegistration,
 );
 
 router.post(
   '/login',
-  // validateRequest(authValidationSchema.loginUserZodSchema),
+  validateRequest(authValidationSchema.loginUserZodSchema),
   AuthController.loginUser,
 );
 export const authRoutes = router;

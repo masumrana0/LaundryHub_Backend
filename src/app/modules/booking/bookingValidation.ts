@@ -8,13 +8,16 @@ const ServiceSchema = z.object({
 
 // Zod validation schema for IBooking
 const BookingZodSchema = z.object({
-  user: z.string({ required_error: 'user objectId is required' }),
-  services: z.array(ServiceSchema, {
-    required_error: 'user service is required for booking',
+  body: z.object({
+    user: z.string({ required_error: 'user objectId is required' }),
+    services: z.array(ServiceSchema, {
+      required_error: 'user service is required for booking',
+    }),
+    grandPrice: z.number(),
+    bookingDate: z.date(),
+    address: z.string(),
+    deliveryDate: z.date(),
   }),
-  grandPrice: z.number(),
-  bookingDate: z.date(),
-  deliveryDate: z.date(),
 });
 
 export const BookingZodValidationSchema = {

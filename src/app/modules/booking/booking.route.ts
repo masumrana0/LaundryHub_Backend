@@ -33,7 +33,7 @@ router.get(
 router.patch(
   '/:id',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
-  BookingController.updateBookingDeliveryDate,
+  BookingController.updateBookingData,
 );
 
 router.delete(

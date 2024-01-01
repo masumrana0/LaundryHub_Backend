@@ -26,7 +26,7 @@ const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
 };
 
 // update deliveryBookingDate
-const updateBookingDeliveryDate = async (
+const updateBookingData = async (
   payload: Partial<IBooking>,
   id: string,
 ): Promise<IBooking | null> => {
@@ -156,7 +156,7 @@ const getSpecificUserBookingData = async (
 
 export const BookingService = {
   makeBooking,
-  updateBookingDeliveryDate,
+  updateBookingData,
   cancelBooking,
   getAllbooking,
   getSpecificUserBookingData,

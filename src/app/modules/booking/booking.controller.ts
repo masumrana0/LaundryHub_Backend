@@ -31,20 +31,18 @@ const makeBooking = catchAsync(async (req: Request, res: Response) => {
 });
 
 // make booking product
-const updateBookingDeliveryDate = catchAsync(
-  async (req: Request, res: Response) => {
-    const { ...data } = req.body;
-    const { id } = req.params;
-    const result = await BookingService.updateBookingDeliveryDate(data, id);
+const updateBookingData = catchAsync(async (req: Request, res: Response) => {
+  const { ...data } = req.body;
+  const { id } = req.params;
+  const result = await BookingService.updateBookingData(data, id);
 
-    sendResponse<IBooking>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Booking date updated  successfull !',
-      data: result,
-    });
-  },
-);
+  sendResponse<IBooking>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Booking date updated  successfull !',
+    data: result,
+  });
+});
 
 // cancel booking product
 const cancelBooking = catchAsync(async (req: Request, res: Response) => {
@@ -97,7 +95,7 @@ const getSpecificUserBookingData = catchAsync(
 
 export const BookingController = {
   makeBooking,
-  updateBookingDeliveryDate,
+  updateBookingData,
   cancelBooking,
   getAllbookingData,
   getSpecificUserBookingData,

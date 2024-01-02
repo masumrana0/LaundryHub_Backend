@@ -20,14 +20,6 @@ const userLoginZodSchema = z.object({
   }),
 });
 
-// const changePasswordZodSchema=z.object({
-//   body:z.object({
-//     oldPassowrd:z.string({
-//       required_error:""
-//     })
-//   })
-// })
-
 // customer registration validation schema
 const customerRegisterZodSchema = z.object({
   body: z.object({
@@ -64,9 +56,22 @@ const refreshTokenZodSchema = z.object({
   }),
 });
 
+// change Password Zod Schema
+const changePasswordZodSchema = z.object({
+  body: z.object({
+    oldPassword: z.string({
+      required_error: 'Old password  is required',
+    }),
+    newPassword: z.string({
+      required_error: 'new password  is required',
+    }),
+  }),
+});
+
 export const authValidationSchema = {
   customerRegisterZodSchema,
   userLoginZodSchema,
   adminRegisterZodSchema,
   refreshTokenZodSchema,
+  changePasswordZodSchema,
 };

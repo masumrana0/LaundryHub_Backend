@@ -87,6 +87,7 @@ UserSchema.statics.isUserExist = async function (
   );
 };
 
+//password Matching
 UserSchema.statics.isPasswordMatched = async function (
   givenPassword: string,
   savedPassword: string,

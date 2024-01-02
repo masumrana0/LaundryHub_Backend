@@ -7,6 +7,8 @@ import { ENUM_USER_ROLE } from '../../../enums/role';
 
 const router = express.Router();
 
+router.get('/verification', AuthController.verification);
+
 router.post(
   '/login',
   validateRequest(authValidationSchema.userLoginZodSchema),
@@ -29,4 +31,5 @@ router.post(
   ),
   AuthController.changePassword,
 );
+
 export const AuthRoutes = router;

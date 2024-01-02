@@ -7,6 +7,7 @@ type IName = {
 };
 
 export type IUser = {
+  save(): unknown;
   _id?: string;
   name: IName;
   role: 'customer' | 'admin' | 'super_admin';

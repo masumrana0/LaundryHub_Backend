@@ -5,6 +5,8 @@ import { AuthService } from './auth.service';
 import config from '../../../config';
 import sendResponse from '../../../shared/sendResponse';
 import { ILoginUserResponse, IRefreshTokenResponse } from './auth.interface';
+import { jwtHelpers } from '../../../helper/jwtHelpers';
+import { Secret } from 'jsonwebtoken';
 
 // userLogin
 const userLogin = catchAsync(async (req: Request, res: Response) => {
@@ -65,8 +67,34 @@ const changePassword = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// email verification
+const verification = catchAsync(async (req: Request, res: Response) => {
+  // Extract the refreshToken from cookies
+  const refreshToken = req.cookies.refreshToken;
+
+  // Verify the refreshToken to get the email
+  const verifiedUser = jwtHelpers.verifyToken(
+    refreshToken as string,
+    config.refreshTokenSecret as Secret,
+  );
+
+  const { email } = verifiedUser;
+
+  // Call AuthService to verify the email
+  await AuthService.verification(email);
+
+  // Send success response
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Your email is verified successfully!',
+    data: null,
+  });
+});
+
 export const AuthController = {
   userLogin,
   refreshToken,
   changePassword,
+  verification,
 };

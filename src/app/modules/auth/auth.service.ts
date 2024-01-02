@@ -10,6 +10,7 @@ import {
 import ApiError from '../../../errors/ApiError';
 import { jwtHelpers } from '../../../helper/jwtHelpers';
 import config from '../../../config';
+import { IUser } from '../user/user.interface';
 
 // login user
 const userLogin = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
@@ -131,8 +132,74 @@ const changePassword = async (
   isUserExist.save();
 };
 
+// email verification
+const verification = async (email: string): Promise<void> => {
+  // Retrieve the user by email
+  const isUserExist: IUser | null = await User.findOne({
+    email: email,
+  });
+
+  // Check if the user exists
+  if (!isUserExist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+  }
+
+  // Check if the email is already verified
+  if (isUserExist && isUserExist.isEmailVerified) {
+    throw new ApiError(httpStatus.OK, 'Your email is already Verified');
+  }
+
+  // update email verified data
+  const result = await User.findByIdAndUpdate(
+    isUserExist._id,
+    { isEmailVerified: true },
+    { new: true },
+  );
+
+  // Check if the email is verified
+  if (!result?.isEmailVerified) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Email verification failed');
+  }
+
+  return;
+};
+
+// forgot Password
+// const forgotPassword = async (email: string) => {
+//   const user = await User.findOne({ email: email });
+
+//   if (!user) {
+//     throw new ApiError(httpStatus.BAD_REQUEST, 'User does not exist!');
+//   }
+
+//   const passResetToken = await jwtHelpers.createResetToken(
+//     { id: user.id },
+//     config.accessTokenSecret as Secret,
+//     '50m',
+//   );
+
+//   const resetLink: string = config.resetlink + `token=${passResetToken}`;
+
+//   // console.log('profile: ', profile);
+//   await sendEmail(
+//     profile.email,
+//     `
+//       <div>
+//         <p>Hi, ${profile.name.firstName}</p>
+//         <p>Your password reset link: <a href=${resetLink}>Click Here</a></p>
+//         <p>Thank you</p>
+//       </div>
+//   `,
+//   );
+
+//   // return {
+//   //   message: "Check your email!"
+//   // }
+// };
+
 export const AuthService = {
   userLogin,
   refreshToken,
   changePassword,
+  verification,
 };

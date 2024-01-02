@@ -115,7 +115,7 @@ const getSpecificUserBookingData = async (
   }
 
   // Fetching data using find method
-  const result = await Booking.findById(id)
+  const result = await Booking.find({ user: id })
     .populate('user')
     .sort(sortConditions)
     .skip(skip)

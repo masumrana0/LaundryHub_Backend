@@ -25,7 +25,7 @@ router.post(
 
 // create Review
 router.post(
-  '/review',
+  '/review/:serviceId',
   auth(ENUM_USER_ROLE.CUSTOMER),
   validateRequest(ServiceValidation.reviewSchema),
   ServiceController.makeReview,

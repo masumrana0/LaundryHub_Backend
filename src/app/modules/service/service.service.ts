@@ -63,9 +63,22 @@ const getAllService = async (
     andConditions.length > 0 ? { $and: andConditions } : {};
 
   const result = await Service.find(whereConditions)
+    .populate({
+      path: 'reviews',
+      populate: {
+        path: 'user',
+      },
+    })
     .limit(limit)
     .skip(5)
     .sort(sortConditions);
+
+  // console.log(result);
+  // for (const service of result) {
+  //   for (const review of service.reviews) {
+  //     await Review.populate(review, { path: 'user' });
+  //   }
+  // }
 
   const total = await Service.countDocuments(whereConditions);
   return {

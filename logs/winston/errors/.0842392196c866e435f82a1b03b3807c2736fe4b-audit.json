@@ -1,165 +1,175 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\.0842392196c866e435f82a1b03b3807c2736fe4b-audit.json",
-  "files": [
-    {
-      "date": 1703766089844,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-28-18.log",
-      "hash": "3edc1509f52105b71841aede3942ca7ec51acac2e683ff1dbd3dbc78510420fd"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1703821715634,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-09.log",
-      "hash": "7833e1c1da8975252918124bb5041927942bb41febec9d6afd152b8e3a17845d"
-    },
-    {
-      "date": 1703824931695,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-10.log",
-      "hash": "2e34932005efbe3b3ecefbe3df43c172ec19d65dbb58eee100c7cea09ddfc1f9"
-    },
-    {
-      "date": 1703826062023,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-11.log",
-      "hash": "488f6598388a1700bffb822b7a626e2a4b83ec3955f8d96860296858e77c8111"
-    },
-    {
-      "date": 1703830131172,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-12.log",
-      "hash": "a8e4b22d9f7656ba6582145857f696bf5f58a2d6180be03a1ef02ebee7467e13"
-    },
-    {
-      "date": 1703851518811,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-18.log",
-      "hash": "9cb6e10c537c8ceaf12cc253222891e842ec08abeb4039d5359479c2a6005d93"
-    },
-    {
-      "date": 1703854803584,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-19.log",
-      "hash": "6fe90ddea52525c58cc53dd113f4dafa13042c6d93a0f058199612222bac8c73"
-    },
-    {
-      "date": 1703858421216,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-20.log",
-      "hash": "289879759d6449203b26f19a63b39d631ee25dd974a192fe1b604103c35381db"
-    },
-    {
-      "date": 1703914230906,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-11.log",
-      "hash": "4ca4e1af178612ad596c669d12cfd510c122433fa88fdaf0ebbc411173774438"
-    },
-    {
-      "date": 1703916196570,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-12.log",
-      "hash": "b926430f7b0dc1ba75e8d01ecc8c8f194a68911accb9c69b76c7ed8160635432"
-    },
-    {
-      "date": 1703938467328,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-18.log",
-      "hash": "59331f19003913102c36aeac83133d79b7fdbc1a7ea5fed7ebfa59023675972c"
-    },
-    {
-      "date": 1703942168214,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-19.log",
-      "hash": "e61899d50b93638e167750c2f72001c29f3add5f11a08548bc6df7fdebf0f57d"
-    },
-    {
-      "date": 1703945442934,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-20.log",
-      "hash": "91d19aa0c42116e89291369b2f36b09fd1950b042182b98cdacc51c3c0e283a0"
-    },
-    {
-      "date": 1703995178841,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-09.log",
-      "hash": "4c474e78ca2a78d4965c5270e676fb5a111ccbe979d36538039e77d6c0fbfc32"
-    },
-    {
-      "date": 1703995377839,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-10.log",
-      "hash": "6c261f9faf666313cbd772d632a19dd143079b9bf62c16c6ee44269611c25351"
-    },
-    {
-      "date": 1704014417679,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-15.log",
-      "hash": "c271601b42249d34e95fdadd3240e91b8b251f9b4b346cc9397385551277b7d1"
-    },
-    {
-      "date": 1704016838802,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-16.log",
-      "hash": "b22776155400de80410041dc6c5aa1b2ef2ebf99713c09d2e6393140adb630ab"
-    },
-    {
-      "date": 1704027640705,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-19.log",
-      "hash": "02e10dd66699a9889677e507a76dfd2a459a4171f6ce22d901c7130d73861297"
-    },
-    {
-      "date": 1704031250956,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-20.log",
-      "hash": "69c725da9ac50d92844f272557d67217bf85c644aa973251fb55f38c2d75ed82"
-    },
-    {
-      "date": 1704034944845,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-21.log",
-      "hash": "33eaec335946ac9b0453d304520e5c5b6a3285ac040dbe89b19069135cf7083e"
-    },
-    {
-      "date": 1704038401323,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-22.log",
-      "hash": "33ad595b665ac93663b66217a2778e6246df94e50dc11df0020bedf308f053d7"
-    },
-    {
-      "date": 1704042260421,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-23.log",
-      "hash": "d29381d97df57c169603ed8822857d58f129300cbbf4cc83802e488c209752ff"
-    },
-    {
-      "date": 1704045844666,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-00.log",
-      "hash": "c230de8f6cc709641cccf3d559881336142ce4cc666342b227142f56b1e3989b"
-    },
-    {
-      "date": 1704082580693,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-10.log",
-      "hash": "44f0a9889a3cbadc13b8067e564ebcb2bb714e529ef0d895040c5cb208feb9b3"
-    },
-    {
-      "date": 1704085200339,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-11.log",
-      "hash": "f0ca1c754903f09ad4db81690aace70705b2d52244e080ed3af058bd63c36c5d"
-    },
-    {
-      "date": 1704088879945,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-12.log",
-      "hash": "89878463dc2aeb61292557b2cffeab85317b47f17c1e55c585677f40df90e61b"
-    },
-    {
-      "date": 1704099135591,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-14.log",
-      "hash": "73676f526a7872b727c0fa16ec76477a58e9d38a3c8bca624062cc52445b646a"
-    },
-    {
-      "date": 1704099635551,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-15.log",
-      "hash": "ad305c5b90e37ab99b55ff2deeda7c6af6fc0d5f83121bc30f93a2d75bf49e84"
-    },
-    {
-      "date": 1704105777822,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-16.log",
-      "hash": "50a6573ad9e46d6fc2c91b8f2353d45ec67653c73cce381269092634d2d51039"
-    },
-    {
-      "date": 1704111637779,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-18.log",
-      "hash": "04c644d6eca73bbb621d03c4d726d607500585fc35fa31c7447d0fd73b162709"
-    },
-    {
-      "date": 1704114156049,
-      "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-19.log",
-      "hash": "cb9983e620f64180604aa0c8e5dddeaba90298314a1d680c1822f465bc32d9f5"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\.0842392196c866e435f82a1b03b3807c2736fe4b-audit.json",
+    "files": [
+        {
+            "date": 1703766089844,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-28-18.log",
+            "hash": "3edc1509f52105b71841aede3942ca7ec51acac2e683ff1dbd3dbc78510420fd"
+        },
+        {
+            "date": 1703821715634,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-09.log",
+            "hash": "7833e1c1da8975252918124bb5041927942bb41febec9d6afd152b8e3a17845d"
+        },
+        {
+            "date": 1703824931695,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-10.log",
+            "hash": "2e34932005efbe3b3ecefbe3df43c172ec19d65dbb58eee100c7cea09ddfc1f9"
+        },
+        {
+            "date": 1703826062023,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-11.log",
+            "hash": "488f6598388a1700bffb822b7a626e2a4b83ec3955f8d96860296858e77c8111"
+        },
+        {
+            "date": 1703830131172,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-12.log",
+            "hash": "a8e4b22d9f7656ba6582145857f696bf5f58a2d6180be03a1ef02ebee7467e13"
+        },
+        {
+            "date": 1703851518811,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-18.log",
+            "hash": "9cb6e10c537c8ceaf12cc253222891e842ec08abeb4039d5359479c2a6005d93"
+        },
+        {
+            "date": 1703854803584,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-19.log",
+            "hash": "6fe90ddea52525c58cc53dd113f4dafa13042c6d93a0f058199612222bac8c73"
+        },
+        {
+            "date": 1703858421216,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-29-20.log",
+            "hash": "289879759d6449203b26f19a63b39d631ee25dd974a192fe1b604103c35381db"
+        },
+        {
+            "date": 1703914230906,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-11.log",
+            "hash": "4ca4e1af178612ad596c669d12cfd510c122433fa88fdaf0ebbc411173774438"
+        },
+        {
+            "date": 1703916196570,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-12.log",
+            "hash": "b926430f7b0dc1ba75e8d01ecc8c8f194a68911accb9c69b76c7ed8160635432"
+        },
+        {
+            "date": 1703938467328,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-18.log",
+            "hash": "59331f19003913102c36aeac83133d79b7fdbc1a7ea5fed7ebfa59023675972c"
+        },
+        {
+            "date": 1703942168214,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-19.log",
+            "hash": "e61899d50b93638e167750c2f72001c29f3add5f11a08548bc6df7fdebf0f57d"
+        },
+        {
+            "date": 1703945442934,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-30-20.log",
+            "hash": "91d19aa0c42116e89291369b2f36b09fd1950b042182b98cdacc51c3c0e283a0"
+        },
+        {
+            "date": 1703995178841,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-09.log",
+            "hash": "4c474e78ca2a78d4965c5270e676fb5a111ccbe979d36538039e77d6c0fbfc32"
+        },
+        {
+            "date": 1703995377839,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-10.log",
+            "hash": "6c261f9faf666313cbd772d632a19dd143079b9bf62c16c6ee44269611c25351"
+        },
+        {
+            "date": 1704014417679,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-15.log",
+            "hash": "c271601b42249d34e95fdadd3240e91b8b251f9b4b346cc9397385551277b7d1"
+        },
+        {
+            "date": 1704016838802,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-16.log",
+            "hash": "b22776155400de80410041dc6c5aa1b2ef2ebf99713c09d2e6393140adb630ab"
+        },
+        {
+            "date": 1704027640705,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-19.log",
+            "hash": "02e10dd66699a9889677e507a76dfd2a459a4171f6ce22d901c7130d73861297"
+        },
+        {
+            "date": 1704031250956,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-20.log",
+            "hash": "69c725da9ac50d92844f272557d67217bf85c644aa973251fb55f38c2d75ed82"
+        },
+        {
+            "date": 1704034944845,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-21.log",
+            "hash": "33eaec335946ac9b0453d304520e5c5b6a3285ac040dbe89b19069135cf7083e"
+        },
+        {
+            "date": 1704038401323,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-22.log",
+            "hash": "33ad595b665ac93663b66217a2778e6246df94e50dc11df0020bedf308f053d7"
+        },
+        {
+            "date": 1704042260421,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2023-12-31-23.log",
+            "hash": "d29381d97df57c169603ed8822857d58f129300cbbf4cc83802e488c209752ff"
+        },
+        {
+            "date": 1704045844666,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-00.log",
+            "hash": "c230de8f6cc709641cccf3d559881336142ce4cc666342b227142f56b1e3989b"
+        },
+        {
+            "date": 1704082580693,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-10.log",
+            "hash": "44f0a9889a3cbadc13b8067e564ebcb2bb714e529ef0d895040c5cb208feb9b3"
+        },
+        {
+            "date": 1704085200339,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-11.log",
+            "hash": "f0ca1c754903f09ad4db81690aace70705b2d52244e080ed3af058bd63c36c5d"
+        },
+        {
+            "date": 1704088879945,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-12.log",
+            "hash": "89878463dc2aeb61292557b2cffeab85317b47f17c1e55c585677f40df90e61b"
+        },
+        {
+            "date": 1704099135591,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-14.log",
+            "hash": "73676f526a7872b727c0fa16ec76477a58e9d38a3c8bca624062cc52445b646a"
+        },
+        {
+            "date": 1704099635551,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-15.log",
+            "hash": "ad305c5b90e37ab99b55ff2deeda7c6af6fc0d5f83121bc30f93a2d75bf49e84"
+        },
+        {
+            "date": 1704105777822,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-16.log",
+            "hash": "50a6573ad9e46d6fc2c91b8f2353d45ec67653c73cce381269092634d2d51039"
+        },
+        {
+            "date": 1704111637779,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-18.log",
+            "hash": "04c644d6eca73bbb621d03c4d726d607500585fc35fa31c7447d0fd73b162709"
+        },
+        {
+            "date": 1704114156049,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-01-19.log",
+            "hash": "cb9983e620f64180604aa0c8e5dddeaba90298314a1d680c1822f465bc32d9f5"
+        },
+        {
+            "date": 1704166674934,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-02-09.log",
+            "hash": "6243dcb92eaf5c9e282e748409e7ee4eaa80ef8ab7dd2cb1f5b40cbe817bf2df"
+        },
+        {
+            "date": 1704168101276,
+            "name": "C:\\Users\\Masum-Rana\\Documents\\Next level Web Development\\assignment-9\\laundryhub-backend\\logs\\winston\\errors\\error-2024-01-02-10.log",
+            "hash": "51e92cf47d1f1243313c320d4472ee7f214b7260dbcdac44fdcda09e9925d650"
+        }
+    ],
+    "hashType": "sha256"
 }

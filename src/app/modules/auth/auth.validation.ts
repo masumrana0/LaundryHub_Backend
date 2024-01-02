@@ -20,6 +20,14 @@ const userLoginZodSchema = z.object({
   }),
 });
 
+// const changePasswordZodSchema=z.object({
+//   body:z.object({
+//     oldPassowrd:z.string({
+//       required_error:""
+//     })
+//   })
+// })
+
 // customer registration validation schema
 const customerRegisterZodSchema = z.object({
   body: z.object({
@@ -47,8 +55,18 @@ const adminRegisterZodSchema = z.object({
   }),
 });
 
+// refresh Token Zod Schema
+const refreshTokenZodSchema = z.object({
+  cookies: z.object({
+    refreshToken: z.string({
+      required_error: 'Refresh Token is required',
+    }),
+  }),
+});
+
 export const authValidationSchema = {
   customerRegisterZodSchema,
   userLoginZodSchema,
   adminRegisterZodSchema,
+  refreshTokenZodSchema,
 };

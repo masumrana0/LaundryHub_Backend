@@ -25,6 +25,7 @@ const customerRegistration = async (
   if (!result) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Something is wrong');
   }
+  // await AuthService.sendEmailVerificationMail(result.email);
 
   const loginData = { email: result?.email, password: payload?.password };
   const token = await AuthService.userLogin(loginData);

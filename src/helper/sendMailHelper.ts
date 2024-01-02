@@ -3,9 +3,7 @@ import config from '../config';
 
 const sendMail = async (to: string, subject: string, html: string) => {
   const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
       user: config.email,
       pass: config.email_password,

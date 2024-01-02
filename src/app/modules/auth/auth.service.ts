@@ -11,6 +11,7 @@ import ApiError from '../../../errors/ApiError';
 import { jwtHelpers } from '../../../helper/jwtHelpers';
 import config from '../../../config';
 import { IUser } from '../user/user.interface';
+import { sendMailerHelper } from '../../../helper/sendMailHelper';
 
 // login user
 const userLogin = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
@@ -164,6 +165,25 @@ const verification = async (email: string): Promise<void> => {
   return;
 };
 
+// send Verification email
+const sendEmailVerificationMail = async (email: string): Promise<void> => {
+  const verificationLink = config.verification_url;
+
+  await sendMailerHelper.sendMail(
+    email,
+    'user Email verification',
+    `
+      <div>
+        <p>Hi</p>
+        <p>Your password reset link: <a href=${verificationLink}>Click Here</a></p>
+        <p>Thank you</p>
+      </div>
+  `,
+  );
+
+  return;
+};
+
 // forgot Password
 // const forgotPassword = async (email: string) => {
 //   const user = await User.findOne({ email: email });
@@ -202,4 +222,5 @@ export const AuthService = {
   refreshToken,
   changePassword,
   verification,
+  sendEmailVerificationMail,
 };

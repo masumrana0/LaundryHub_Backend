@@ -13,6 +13,8 @@ export type IUser = {
   password: string;
   phoneNumber: string;
   email: string;
+  passwordChangedAt?: Date;
+  isPasswordChanged: boolean;
   isEmailVerified: boolean;
   profileImage?: string;
 };

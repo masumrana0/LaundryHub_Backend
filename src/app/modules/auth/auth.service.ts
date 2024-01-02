@@ -125,6 +125,7 @@ const changePassword = async (
   }
 
   isUserExist.password = newPassword;
+  isUserExist.isPasswordChanged = true;
 
   // save the updated password
   isUserExist.save();

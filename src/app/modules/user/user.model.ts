@@ -49,6 +49,13 @@ const UserSchema = new Schema<IUser, UserModel>(
       type: Boolean,
       default: false,
     },
+    isPasswordChanged: {
+      type: Boolean,
+      default: false,
+    },
+    passwordChangedAt: {
+      type: Date,
+    },
   },
   {
     timestamps: true,
@@ -64,6 +71,9 @@ UserSchema.pre('save', async function (next) {
     this.password,
     Number(config.bcrypt_salt_rounds),
   );
+  if (this.isPasswordChanged) {
+    this.passwordChangedAt = new Date();
+  }
   next();
 });
 

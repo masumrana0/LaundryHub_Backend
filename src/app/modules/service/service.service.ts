@@ -8,7 +8,7 @@
 
 import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helper/paginationHelper';
-import { serviceFilterAbleField } from './service.constant';
+import { serviceSearchAbleField } from './service.constant';
 import {
   IReview,
   IService,
@@ -38,15 +38,14 @@ const getAllService = async (
   paginationOption: IPaginationOptions,
 ): Promise<IGenericResponse<IService[]> | null> => {
   const { searchTerm, ...filter } = filters;
-  console.log(filter);
-  const { page, limit, sortBy, sortOrder } =
+
+  const { page, limit, sortBy, skip, sortOrder } =
     paginationHelpers.calculatePagination(paginationOption);
 
   const andConditions = [];
-
-  if (searchTerm) {
+  if (searchTerm?.length) {
     andConditions.push({
-      $or: serviceFilterAbleField.map(filed => ({
+      $or: serviceSearchAbleField.map(filed => ({
         [filed]: {
           $regex: searchTerm,
           $options: 'i',
@@ -62,15 +61,16 @@ const getAllService = async (
       })),
     });
   }
-  // console.log(andConditions);
+
   // Dynamic  Sort needs  field to  do sorting
   const sortConditions: { [key: string]: SortOrder } = {};
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
+  // console.log(andConditions);
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
-  // console.log(whereConditions);
+
   const result = await Service.find(whereConditions)
     .populate({
       path: 'reviews',
@@ -79,17 +79,16 @@ const getAllService = async (
       },
     })
     .limit(limit)
-    .skip(5)
+    .skip(skip)
     .sort(sortConditions);
 
-  // console.log(result);
   // for (const service of result) {
   //   for (const review of service.reviews) {
   //     await Review.populate(review, { path: 'user' });
   //   }
   // }
 
-  const total = await Service.countDocuments(whereConditions);
+  const total = await Service.countDocuments({});
   return {
     meta: {
       page,

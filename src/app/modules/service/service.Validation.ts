@@ -14,7 +14,9 @@ const serviceValidationSchema = z.object({
     title: z.string({
       required_error: 'title is required',
     }),
-    img: z.string({ required_error: 'img is required' }),
+    images: z.array(z.string(), {
+      required_error: 'image is required',
+    }),
     details: z.array(z.string(), {
       required_error: 'details is required',
     }),

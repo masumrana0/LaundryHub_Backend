@@ -92,6 +92,16 @@ const verification = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+// const sendEmail = catchAsync(async (req: Request, res: Response) => {
+//   await AuthService.sendEmailVerificationMail('masum.rana6267@gmail.com');
+//   sendResponse(res, {
+//     statusCode: httpStatus.OK,
+//     success: true,
+//     message: 'Email send successful',
+//     data: null,
+//   });
+// });
+
 export const AuthController = {
   userLogin,
   refreshToken,

@@ -173,11 +173,13 @@ const sendEmailVerificationMail = async (email: string): Promise<void> => {
     email,
     'user Email verification',
     `
-      <div>
-        <p>Hi</p>
-        <p>Your password reset link: <a href=${verificationLink}>Click Here</a></p>
-        <p>Thank you</p>
-      </div>
+    <div style="font-family: Arial, sans-serif; color: #333; background-color: #f9f9f9; padding: 20px;">
+    <h1 style="color: #4CAF50;">Welcome to <span style="color: #4CAF50;">LaundryHub</span></h1>
+    <p>Please verify your account by clicking the following link:</p>
+    <button style=" padding: 12px 20px; background-color: #4CAF50; color: white; border-radius: 5px; border:none"><a href="${verificationLink}" style="text-decoration: none;color:white; font-weight:bold" >Verify Email</a></button>
+   
+    <p>Thank you!</p>
+  </div>
   `,
   );
 

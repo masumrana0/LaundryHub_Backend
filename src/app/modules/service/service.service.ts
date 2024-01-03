@@ -37,7 +37,8 @@ const getAllService = async (
   filters: IServiceFilterAbleFiled,
   paginationOption: IPaginationOptions,
 ): Promise<IGenericResponse<IService[]> | null> => {
-  const { searchTerm } = filters;
+  const { searchTerm, ...filter } = filters;
+  console.log(filter);
   const { page, limit, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOption);
 
@@ -54,6 +55,14 @@ const getAllService = async (
     });
   }
 
+  if (Object.keys(filter).length) {
+    andConditions.push({
+      $and: Object.entries(filter).map(([field, value]) => ({
+        [field]: value,
+      })),
+    });
+  }
+  // console.log(andConditions);
   // Dynamic  Sort needs  field to  do sorting
   const sortConditions: { [key: string]: SortOrder } = {};
   if (sortBy && sortOrder) {
@@ -61,7 +70,7 @@ const getAllService = async (
   }
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
-
+  // console.log(whereConditions);
   const result = await Service.find(whereConditions)
     .populate({
       path: 'reviews',

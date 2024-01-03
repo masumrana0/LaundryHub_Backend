@@ -25,7 +25,7 @@ router.get(
 );
 
 router.get(
-  '/:userId',
+  '/userbookinghistory',
   auth(ENUM_USER_ROLE.CUSTOMER),
   BookingController.getSpecificUserBookingData,
 );

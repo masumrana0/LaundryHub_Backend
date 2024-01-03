@@ -76,12 +76,13 @@ const getAllbookingData = catchAsync(async (req: Request, res: Response) => {
 const getSpecificUserBookingData = catchAsync(
   async (req: Request, res: Response) => {
     const query = req.query;
-    const { userId } = req.params;
+    // Verify the refreshToken to get the userId
+    const user = req.user;
     const paginationOptions = pick(query, paginationFields);
 
     const result = await BookingService.getSpecificUserBookingData(
       paginationOptions,
-      userId,
+      user?.userid,
     );
     sendResponse<IBooking[] | null>(res, {
       statusCode: httpStatus.OK,

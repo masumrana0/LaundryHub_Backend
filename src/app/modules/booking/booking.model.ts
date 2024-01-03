@@ -21,7 +21,7 @@ const BookingSchema = new Schema<IBooking>(
   {
     user: {
       type: Types.ObjectId,
-      ref: 'user',
+      ref: 'User',
       required: true,
     },
     services: [ServiceSchema],

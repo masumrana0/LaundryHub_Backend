@@ -70,18 +70,17 @@ const changePassword = catchAsync(async (req: Request, res: Response) => {
 // email verification
 const verification = catchAsync(async (req: Request, res: Response) => {
   // Extract the refreshToken from cookies
-  const refreshToken = req.cookies.refreshToken;
+  const Token = req.query.token;
 
-  // Verify the refreshToken to get the email
-  const verifiedUser = jwtHelpers.verifyToken(
-    refreshToken as string,
-    config.refreshTokenSecret as Secret,
+  // // Verify the refreshToken to get the email
+  const verifiedToken = jwtHelpers.verifyToken(
+    Token as string,
+    config.accessTokenSecret as Secret,
   );
-
-  const { email } = verifiedUser;
+  const { email } = verifiedToken;
 
   // Call AuthService to verify the email
-  await AuthService.verification(email);
+  await AuthService.verification(email as string);
 
   // Send success response
   sendResponse(res, {

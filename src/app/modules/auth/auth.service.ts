@@ -167,7 +167,12 @@ const verification = async (email: string): Promise<void> => {
 
 // send Verification email
 const sendEmailVerificationMail = async (email: string): Promise<void> => {
-  const verificationLink = config.verification_url;
+  const validate = await jwtHelpers.createResetToken(
+    { email: email },
+    config.accessTokenSecret as string,
+    '2m',
+  );
+  const verificationLink = config.verification_url + `?token=${validate}`;
 
   await sendMailerHelper.sendMail(
     email,

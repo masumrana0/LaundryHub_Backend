@@ -8,6 +8,15 @@ import { ENUM_USER_ROLE } from '../../../enums/role';
 const router = express.Router();
 
 router.get('/verification', AuthController.verification);
+router.get(
+  '/verification/client',
+  auth(
+    ENUM_USER_ROLE.ADMIN,
+    ENUM_USER_ROLE.SUPER_ADMIN,
+    ENUM_USER_ROLE.CUSTOMER,
+  ),
+  AuthController.verificationEmailSendByClient,
+);
 
 router.post(
   '/login',

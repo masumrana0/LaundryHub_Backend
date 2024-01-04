@@ -70,14 +70,21 @@ const changePassword = catchAsync(async (req: Request, res: Response) => {
 // email verification
 const verification = catchAsync(async (req: Request, res: Response) => {
   // Extract the refreshToken from cookies
-  const Token = req.query.token;
+  let token: string = '';
+  if (req.headers.authorization) {
+    token = req.headers.authorization as string;
+  } else if (req.query.token) {
+    token = req.query.token as string;
+  }
+  console.log('accessToken', req.headers.authorization);
 
-  // // Verify the refreshToken to get the email
+  //  Verify the Token to get the email
   const verifiedToken = jwtHelpers.verifyToken(
-    Token as string,
+    token as string,
     config.accessTokenSecret as Secret,
   );
   const { email } = verifiedToken;
+  console.log(email);
 
   // Call AuthService to verify the email
   await AuthService.verification(email as string);
@@ -90,6 +97,23 @@ const verification = catchAsync(async (req: Request, res: Response) => {
     data: null,
   });
 });
+
+const verificationEmailSendByClient = catchAsync(
+  async (req: Request, res: Response) => {
+    const user = req.user;
+
+    // Call AuthService to verify the email
+    await AuthService.sendEmailVerificationMail(user?.email as string);
+
+    // Send success response
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Your email is verified successfully!',
+      data: null,
+    });
+  },
+);
 
 // const sendEmail = catchAsync(async (req: Request, res: Response) => {
 //   await AuthService.sendEmailVerificationMail('masum.rana6267@gmail.com');
@@ -106,4 +130,5 @@ export const AuthController = {
   refreshToken,
   changePassword,
   verification,
+  verificationEmailSendByClient,
 };

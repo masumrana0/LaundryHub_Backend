@@ -1,14 +1,14 @@
 import { Schema, Types, model } from 'mongoose';
-import { IReview, IService } from './service.interface';
+import { IRating, IService } from './service.interface';
 
-const ReviewSchema = new Schema<IReview>({
+const RatingSchema = new Schema<IRating>({
   user: {
     type: Types.ObjectId,
     ref: 'User',
     required: true,
   },
-  review: {
-    type: String,
+  rating: {
+    type: Number,
     required: true,
   },
 });
@@ -31,7 +31,8 @@ const ServiceSchema = new Schema<IService>(
         required: true,
       },
     ],
-    reviews: [ReviewSchema],
+
+    rating: [RatingSchema],
   },
   {
     timestamps: true,
@@ -42,4 +43,5 @@ const ServiceSchema = new Schema<IService>(
 );
 
 export const Service = model<IService>('Service', ServiceSchema);
-export const Review = model<IReview>('review', ReviewSchema);
+
+export const Rating = model<IRating>('ratings', RatingSchema);

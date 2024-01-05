@@ -6,6 +6,8 @@ import { AdminRoutes } from '../modules/auth/admin/admin.route';
 import { CustomerthRoutes } from '../modules/auth/customer/customer.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
 import { FeedBackRoutes } from '../modules/Feedback/feedback.route';
+import { ProfileRoutes } from '../modules/profile/profile.route';
+import { ReviewRoutes } from '../modules/review/review.route';
 
 const router = express.Router();
 
@@ -27,6 +29,10 @@ const moduleRoutes = [
     route: ServiceRoutes,
   },
   {
+    path: '/review',
+    route: ReviewRoutes,
+  },
+  {
     path: '/cleaningproduct',
     route: CleaningProductRoutes,
   },
@@ -37,6 +43,10 @@ const moduleRoutes = [
   {
     path: '/feedback',
     route: FeedBackRoutes,
+  },
+  {
+    path: '/profile',
+    route: ProfileRoutes,
   },
 ];
 

@@ -60,10 +60,17 @@ const getAllService = catchAsync(async (req: Request, res: Response) => {
 });
 
 // make revire in specific service
-const makeReview = catchAsync(async (req: Request, res: Response) => {
-  const { ...review } = req.body;
+
+// give star
+const giveStar = catchAsync(async (req: Request, res: Response) => {
+  const { ...star } = req.body;
+  const userid = req?.user?.userid;
+  const starData = {
+    user: userid,
+    ...star,
+  };
   const { serviceId } = req.params;
-  const result = await ServiceService.createReview(serviceId, review);
+  const result = await ServiceService.giveStar(serviceId, starData);
 
   sendResponse<IService>(res, {
     statusCode: httpStatus.OK,
@@ -77,5 +84,6 @@ export const ServiceController = {
   createService,
   getSingleService,
   getAllService,
-  makeReview,
+
+  giveStar,
 };

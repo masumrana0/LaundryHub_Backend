@@ -76,7 +76,6 @@ const verification = catchAsync(async (req: Request, res: Response) => {
   } else if (req.query.token) {
     token = req.query.token as string;
   }
-  console.log('accessToken', req.headers.authorization);
 
   //  Verify the Token to get the email
   const verifiedToken = jwtHelpers.verifyToken(
@@ -84,7 +83,6 @@ const verification = catchAsync(async (req: Request, res: Response) => {
     config.accessTokenSecret as Secret,
   );
   const { email } = verifiedToken;
-  console.log(email);
 
   // Call AuthService to verify the email
   await AuthService.verification(email as string);
@@ -109,7 +107,7 @@ const verificationEmailSendByClient = catchAsync(
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Your email is verified successfully!',
+      message: 'Email send successfully!',
       data: null,
     });
   },

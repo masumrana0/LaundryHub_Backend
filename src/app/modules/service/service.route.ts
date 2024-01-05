@@ -23,12 +23,10 @@ router.post(
   ServiceController.createService,
 );
 
-// create Review
 router.post(
-  '/review/:serviceId',
+  '/rating/:serviceId',
   auth(ENUM_USER_ROLE.CUSTOMER),
-  validateRequest(ServiceValidation.reviewSchema),
-  ServiceController.makeReview,
+  ServiceController.giveStar,
 );
 
 // get Single service

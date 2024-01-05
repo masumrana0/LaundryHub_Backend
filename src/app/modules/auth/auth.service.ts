@@ -167,6 +167,15 @@ const verification = async (email: string): Promise<void> => {
 
 // send Verification email
 const sendEmailVerificationMail = async (email: string): Promise<void> => {
+  const isUserExist = await User.isUserExist(email);
+
+  if (isUserExist?.isEmailVerified) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      'Your email is already verified',
+    );
+  }
+
   const validate = await jwtHelpers.createResetToken(
     { email: email },
     config.accessTokenSecret as string,

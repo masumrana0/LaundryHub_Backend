@@ -20,26 +20,9 @@ const serviceValidationSchema = z.object({
     details: z.array(z.string(), {
       required_error: 'details is required',
     }),
-    reviews: z.array(
-      z.object({
-        name: z.string({ required_error: 'User name is requred' }),
-        review: z.string({ required_error: 'review is required' }),
-      }),
-    ),
-  }),
-});
-
-// Define a Zod schema for the IReview type
-const reviewSchema = z.object({
-  body: z.object({
-    user: z.string({ required_error: 'userObject id is required' }),
-    review: z.string({
-      required_error: 'review is required',
-    }),
   }),
 });
 
 export const ServiceValidation = {
   serviceValidationSchema,
-  reviewSchema,
 };

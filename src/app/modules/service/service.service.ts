@@ -10,11 +10,11 @@ import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helper/paginationHelper';
 import { serviceSearchAbleField } from './service.constant';
 import {
-  IReview,
+  IRating,
   IService,
   IServiceFilterAbleFiled,
 } from './service.interface';
-import { Review, Service } from './service.model';
+import { Rating, Service } from './service.model';
 import { IGenericResponse } from '../../../shared/sendResponse';
 import { IPaginationOptions } from '../../../inerfaces/pagination';
 import ApiError from '../../../errors/ApiError';
@@ -28,7 +28,12 @@ const createService = async (payload: IService): Promise<IService | null> => {
 
 // getSingle Service
 const getSingleService = async (id: string): Promise<IService | null> => {
-  const service = await Service.findById(id);
+  const service = await Service.findById(id).populate({
+    path: 'reviews',
+    populate: {
+      path: 'user',
+    },
+  });
   return service;
 };
 
@@ -100,21 +105,19 @@ const getAllService = async (
 };
 
 // createReview
-const createReview = async (
+
+// createReview
+const giveStar = async (
   serviceId: string,
-  review: IReview,
+  starData: IRating,
 ): Promise<IService | null> => {
   const service = await Service.findById(serviceId);
   if (!service) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Service not found');
   }
 
-  // Create a new review based on the ReviewSchema
-  const newReview = new Review(review);
-
-  // Push the new review to the service's reviews array
-  service.reviews.push(newReview);
-
+  const newRating = new Rating(starData);
+  service.rating.push(newRating);
   // Save the updated service with the new review
   await service.save();
 
@@ -125,5 +128,6 @@ export const ServiceService = {
   createService,
   getSingleService,
   getAllService,
-  createReview,
+
+  giveStar,
 };

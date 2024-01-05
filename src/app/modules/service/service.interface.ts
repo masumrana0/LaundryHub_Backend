@@ -1,9 +1,9 @@
 import { Types } from 'mongoose';
 import { IUser } from '../user/user.interface';
 
-export type IReview = {
+export type IRating = {
   user?: Types.ObjectId | IUser;
-  review?: string;
+  rating?: number;
 };
 
 type arrayOFString = string;
@@ -12,7 +12,7 @@ export type IService = {
   title: string;
   images: arrayOFString[];
   details: arrayOFString[];
-  reviews: IReview[];
+  rating: IRating[];
 };
 
 export type IServiceFilterAbleFiled = { searchTerm?: string; title?: string };

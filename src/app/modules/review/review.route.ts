@@ -14,6 +14,6 @@ router.post(
   ReviewController.makeReview,
 );
 
-router.get('/:serviceId');
+router.get('/:serviceId', ReviewController.getReview);
 
 export const ReviewRoutes = router;

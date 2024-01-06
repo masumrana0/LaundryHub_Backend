@@ -6,7 +6,7 @@ import { Review } from './review.model';
 
 // get Review
 const getReview = async (id: string): Promise<IReview[] | null> => {
-  const result = await Review.find({ service: id });
+  const result = await Review.find({ service: id }).populate('user');
   return result;
 };
 
@@ -16,6 +16,7 @@ const makeReview = async (review: IReview): Promise<IReview | null> => {
   if (!service) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Service not found');
   }
+  console.log(review);
   // Create a new review based on the ReviewSchema
   const result = await Review.create(review);
 

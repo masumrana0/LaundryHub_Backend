@@ -28,12 +28,8 @@ const createService = async (payload: IService): Promise<IService | null> => {
 
 // getSingle Service
 const getSingleService = async (id: string): Promise<IService | null> => {
-  const service = await Service.findById(id).populate({
-    path: 'reviews',
-    populate: {
-      path: 'user',
-    },
-  });
+  const service = await Service.findById(id);
+
   return service;
 };
 
@@ -77,12 +73,7 @@ const getAllService = async (
     andConditions.length > 0 ? { $and: andConditions } : {};
 
   const result = await Service.find(whereConditions)
-    .populate({
-      path: 'reviews',
-      populate: {
-        path: 'user',
-      },
-    })
+
     .limit(limit)
     .skip(skip)
     .sort(sortConditions);

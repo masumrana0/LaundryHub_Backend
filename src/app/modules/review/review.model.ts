@@ -7,6 +7,11 @@ const ReviewSchema = new Schema<IReview>({
     ref: 'User',
     required: true,
   },
+  service: {
+    type: Types.ObjectId,
+    ref: 'Service',
+    required: true,
+  },
   review: {
     type: String,
     required: true,

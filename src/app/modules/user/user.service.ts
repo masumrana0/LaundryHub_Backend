@@ -14,7 +14,7 @@ const updateUserByadmin = async (
   id: string,
   payload: Partial<IUser>,
 ): Promise<IUser | null> => {
-  const result = await User.findByIdAndUpdate({ id }, payload, {
+  const result = await User.findByIdAndUpdate(id, payload, {
     new: true,
   });
   return result;

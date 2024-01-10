@@ -30,7 +30,7 @@ const getOneUser = catchAsync(async (req: Request, res: Response) => {
 
 const updateUserByadmin = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
-  const updatedData = req.body;
+  const { ...updatedData } = req.body;
   const result = await UserService.updateUserByadmin(id, updatedData);
 
   sendResponse<IUser>(res, {

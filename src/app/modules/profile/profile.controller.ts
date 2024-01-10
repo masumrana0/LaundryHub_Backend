@@ -25,7 +25,7 @@ const updateProfile = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'user profile is updated fatched successfully !',
+    message: 'user profile is updated  successfully !',
     data: result,
   });
 });

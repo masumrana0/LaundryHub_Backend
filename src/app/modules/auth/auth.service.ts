@@ -107,7 +107,7 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
 const changePassword = async (
   payload: IChangePassword,
   user: JwtPayload | null,
-): Promise<void> => {
+) => {
   const { oldPassord, newPassword } = payload;
 
   // checking user existed
@@ -130,7 +130,7 @@ const changePassword = async (
   isUserExist.isPasswordChanged = true;
 
   // save the updated password
-  isUserExist.save();
+  await isUserExist.save();
 };
 
 // email verification

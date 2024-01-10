@@ -10,6 +10,7 @@ import { ProfileRoutes } from '../modules/profile/profile.route';
 import { ReviewRoutes } from '../modules/review/review.route';
 import { RatingRoutes } from '../modules/rating/raing.route';
 import { UserRoutes } from '../modules/user/user.route';
+import { FQARoutes } from '../modules/FQA/fqa.route';
 
 const router = express.Router();
 
@@ -57,6 +58,10 @@ const moduleRoutes = [
   {
     path: '/user',
     route: UserRoutes,
+  },
+  {
+    path: '/fqa',
+    route: FQARoutes,
   },
 ];
 

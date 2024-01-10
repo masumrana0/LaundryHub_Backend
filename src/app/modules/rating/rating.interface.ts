@@ -14,4 +14,6 @@ export type IGetRatingData = {
   totalThreeRating: number;
   totalTwoRating: number;
   totalOneRating: number;
+  totalGiveCustomerRating: number;
+  averageRating: number;
 };

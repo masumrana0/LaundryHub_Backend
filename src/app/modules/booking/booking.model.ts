@@ -3,7 +3,7 @@ import { IBooking, IBookingService } from './booking.interface';
 
 const ServiceSchema = new Schema<IBookingService>({
   service: {
-    type: String,
+    type: Types.ObjectId,
     required: true,
   },
   cleaningProduct: {
@@ -29,7 +29,7 @@ const BookingSchema = new Schema<IBooking>(
       type: Number,
       required: true,
     },
-    bookingDate: {
+    pickupDate: {
       type: Date,
       required: true,
     },

@@ -9,16 +9,10 @@
 import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helper/paginationHelper';
 import { serviceSearchAbleField } from './service.constant';
-import {
-  IRating,
-  IService,
-  IServiceFilterAbleFiled,
-} from './service.interface';
-import { Rating, Service } from './service.model';
+import { IService, IServiceFilterAbleFiled } from './service.interface';
+import { Service } from './service.model';
 import { IGenericResponse } from '../../../shared/sendResponse';
 import { IPaginationOptions } from '../../../inerfaces/pagination';
-import ApiError from '../../../errors/ApiError';
-import httpStatus from 'http-status';
 
 // createService
 const createService = async (payload: IService): Promise<IService | null> => {
@@ -95,30 +89,15 @@ const getAllService = async (
   };
 };
 
-// createReview
-
-// createReview
-const giveStar = async (
-  serviceId: string,
-  starData: IRating,
-): Promise<IService | null> => {
-  const service = await Service.findById(serviceId);
-  if (!service) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Service not found');
-  }
-
-  const newRating = new Rating(starData);
-  service.rating.push(newRating);
-  // Save the updated service with the new review
-  await service.save();
-
-  return service;
+// get all service without filtering and pagination;
+const getAllServiceWithoutAnyTerm = async (): Promise<IService[] | null> => {
+  const result = await Service.find({}).select('title');
+  return result;
 };
 
 export const ServiceService = {
   createService,
   getSingleService,
   getAllService,
-
-  giveStar,
+  getAllServiceWithoutAnyTerm,
 };

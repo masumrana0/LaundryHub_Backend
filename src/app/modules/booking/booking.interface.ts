@@ -1,18 +1,19 @@
 import { Types } from 'mongoose';
 import { IUser } from '../user/user.interface';
 import { ICleaningProduct } from '../cleaningProduct/cleaningProduct.interface';
+import { IService } from '../service/service.interface';
 
 export type IBookingService = {
-  service: string;
+  service: Types.ObjectId | IService;
   cleaningProduct: Types.ObjectId | ICleaningProduct;
   cleaningProductItem: number;
 };
 
 export type IBooking = {
-  user: Types.ObjectId | IUser;
+  user?: Types.ObjectId | IUser;
   services: IBookingService[];
   grandPrice: number;
-  bookingDate: Date;
+  pickupDate?: Date;
   deliveryDate: Date;
   address: string;
   isApproved: boolean;

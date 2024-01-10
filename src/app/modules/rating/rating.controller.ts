@@ -27,6 +27,7 @@ const makeRating = catchAsync(async (req: Request, res: Response) => {
     ...rating,
     user: userid,
   };
+  console.log(ratingData);
 
   const result = await RatingService.makeRating(ratingData);
 

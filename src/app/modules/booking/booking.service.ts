@@ -18,10 +18,10 @@ import { IPaginationOptions } from '../../../inerfaces/pagination';
 // make booking
 const makeBooking = async (payload: IBooking): Promise<IBooking | null> => {
   const result = await Booking.create(payload);
-  for (const service of result.services) {
-    // Assuming `service.cleaningProduct` is the field to be populated
-    await ServiceBooking.populate(service, { path: 'cleaningProduct' });
-  }
+  // for (const service of result.services) {
+  //   // Assuming `service.cleaningProduct` is the field to be populated
+  //   await ServiceBooking.populate(service, { path: 'cleaningProduct' });
+  // }
   return result;
 };
 
@@ -105,7 +105,7 @@ const getSpecificUserBookingData = async (
   id: string,
 ): Promise<IGenericResponse<IBooking[] | null>> => {
   // pagination essentials
-  const { page, limit, skip, sortBy, sortOrder } =
+  const { page, limit, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions);
 
   // Dynamic Sort needs field to do sorting
@@ -115,13 +115,8 @@ const getSpecificUserBookingData = async (
   }
 
   // Fetching data using find method
-  const result = await Booking.find({ user: id })
-    .populate('user')
-    .sort(sortConditions)
-    .skip(skip)
-    .limit(limit);
+  const result = await Booking.find({ user: id }).sort(sortConditions);
 
-  console.log(result);
   if (!result) {
     return {
       meta: {

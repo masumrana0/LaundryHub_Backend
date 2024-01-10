@@ -18,9 +18,15 @@ import { paginationFields } from '../../../constant/pagination';
 
 // make booking product
 const makeBooking = catchAsync(async (req: Request, res: Response) => {
-  const { ...data } = req.body;
+  const user = req?.user;
 
-  const result = await BookingService.makeBooking(data);
+  const { ...data } = req.body;
+  const bookingData = {
+    ...data,
+    user: user?.userid,
+  };
+
+  const result = await BookingService.makeBooking(bookingData);
 
   sendResponse<IBooking>(res, {
     statusCode: httpStatus.OK,

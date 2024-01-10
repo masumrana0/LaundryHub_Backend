@@ -8,6 +8,8 @@ import { AuthRoutes } from '../modules/auth/auth.route';
 import { FeedBackRoutes } from '../modules/Feedback/feedback.route';
 import { ProfileRoutes } from '../modules/profile/profile.route';
 import { ReviewRoutes } from '../modules/review/review.route';
+import { RatingRoutes } from '../modules/rating/raing.route';
+import { UserRoutes } from '../modules/user/user.route';
 
 const router = express.Router();
 
@@ -33,6 +35,10 @@ const moduleRoutes = [
     route: ReviewRoutes,
   },
   {
+    path: '/rating',
+    route: RatingRoutes,
+  },
+  {
     path: '/cleaningproduct',
     route: CleaningProductRoutes,
   },
@@ -47,6 +53,10 @@ const moduleRoutes = [
   {
     path: '/profile',
     route: ProfileRoutes,
+  },
+  {
+    path: '/user',
+    route: UserRoutes,
   },
 ];
 

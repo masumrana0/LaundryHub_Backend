@@ -61,29 +61,23 @@ const getAllService = catchAsync(async (req: Request, res: Response) => {
 
 // make revire in specific service
 
-// give star
-const giveStar = catchAsync(async (req: Request, res: Response) => {
-  const { ...star } = req.body;
-  const userid = req?.user?.userid;
-  const starData = {
-    user: userid,
-    ...star,
-  };
-  const { serviceId } = req.params;
-  const result = await ServiceService.giveStar(serviceId, starData);
+// get All ServicewithoutAny teram
+const getAllServiceWithoutAnyTerm = catchAsync(
+  async (req: Request, res: Response) => {
+    const result = await ServiceService.getAllServiceWithoutAnyTerm();
 
-  sendResponse<IService>(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'Review added successfully !',
-    data: result,
-  });
-});
+    sendResponse<IService[]>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'all review fatched Successful !',
+      data: result,
+    });
+  },
+);
 
 export const ServiceController = {
   createService,
   getSingleService,
   getAllService,
-
-  giveStar,
+  getAllServiceWithoutAnyTerm,
 };

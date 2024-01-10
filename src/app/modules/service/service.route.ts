@@ -15,18 +15,15 @@ import { ENUM_USER_ROLE } from '../../../enums/role';
 
 const router = express.Router();
 
+// get All Service
+router.get('/', ServiceController.getAllService);
+router.get('/all', ServiceController.getAllServiceWithoutAnyTerm);
 // create service by admin
 router.post(
   '/',
   auth(ENUM_USER_ROLE.SUPER_ADMIN),
   validateRequest(ServiceValidation.serviceValidationSchema),
   ServiceController.createService,
-);
-
-router.post(
-  '/rating/:serviceId',
-  auth(ENUM_USER_ROLE.CUSTOMER),
-  ServiceController.giveStar,
 );
 
 // get Single service
@@ -39,8 +36,5 @@ router.get(
   ),
   ServiceController.getSingleService,
 );
-
-// get All Service
-router.get('/', ServiceController.getAllService);
 
 export const ServiceRoutes = router;

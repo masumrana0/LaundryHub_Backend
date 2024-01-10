@@ -9,7 +9,8 @@ const getOneUser = async (id: string): Promise<IUser | null> => {
   const result = await User.findById(id);
   return result;
 };
-const updateUser = async (
+
+const updateUserByadmin = async (
   id: string,
   payload: Partial<IUser>,
 ): Promise<IUser | null> => {
@@ -22,5 +23,5 @@ const updateUser = async (
 export const UserService = {
   getAllUser,
   getOneUser,
-  updateUser,
+  updateUserByadmin,
 };

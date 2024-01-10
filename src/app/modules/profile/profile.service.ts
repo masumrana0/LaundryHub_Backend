@@ -6,6 +6,17 @@ const getUserProfile = async (email: string): Promise<IUser | null> => {
   return result;
 };
 
+const updateProfile = async (
+  id: string,
+  payload: Partial<IUser>,
+): Promise<IUser | null> => {
+  const result = await User.findByIdAndUpdate({ id }, payload, {
+    new: true,
+  });
+  return result;
+};
+
 export const ProfileService = {
   getUserProfile,
+  updateProfile,
 };

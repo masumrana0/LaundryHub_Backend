@@ -28,15 +28,15 @@ const getOneUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const updateUser = catchAsync(async (req: Request, res: Response) => {
+const updateUserByadmin = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const updatedData = req.body;
-  const result = await UserService.updateUser(id, updatedData);
+  const result = await UserService.updateUserByadmin(id, updatedData);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'user fatched successfully !',
+    message: 'user updated successfully !',
     data: result,
   });
 });
@@ -44,5 +44,5 @@ const updateUser = catchAsync(async (req: Request, res: Response) => {
 export const UserController = {
   getAllUser,
   getOneUser,
-  updateUser,
+  updateUserByadmin,
 };

@@ -21,6 +21,7 @@ const makeBooking = catchAsync(async (req: Request, res: Response) => {
   const user = req?.user;
 
   const { ...data } = req.body;
+  console.log(data);
   const bookingData = {
     ...data,
     user: user?.userid,

@@ -15,7 +15,7 @@ const getAllCleaningProduct = async (): Promise<ICleaningProduct[] | null> => {
   return result;
 };
 
-// update  Laundry Cleaning product Data
+// update  Laundry Cleaning product
 const updateCleaningProduct = async (
   payload: Partial<ICleaningProduct>,
   id: string,

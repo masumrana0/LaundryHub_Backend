@@ -1,3 +1,11 @@
+/**
+ * Title: 'Global error handler.'
+ * Description: 'In this handler I handled all of error  in this Application'
+ * Author: 'Masum Rana'
+ * Date: 27-12-2023
+ *
+ */
+
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -9,7 +17,7 @@ import handleValidationError from '../../errors/handleValidationError';
 import { ZodError } from 'zod';
 import handleCastError from '../../errors/handleCastError';
 import handleZodError from '../../errors/handleZodError';
-import { errorLogger } from '../../shared/logger';
+// import { errorLogger } from '../../shared/logger';
 import { IErrorMessages } from '../../inerfaces/error';
 
 const globalErrorHandler: ErrorRequestHandler = (
@@ -19,8 +27,8 @@ const globalErrorHandler: ErrorRequestHandler = (
   next: NextFunction,
 ) => {
   config.env === 'development'
-    ? console.log(`🐱‍🏍 globalErrorHandler ~~`, { error })
-    : errorLogger.error(`🐱‍🏍 globalErrorHandler ~~`, error);
+    ? console.log('Error', error)
+    : console.log(error); //errorLogger.error(`😒 globalErrorHandler ~~`, error);
 
   let statusCode = 500;
   let message = 'Something went wrong !';

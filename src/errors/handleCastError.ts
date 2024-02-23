@@ -1,11 +1,10 @@
 /**
- * Title: 'Handling cast console.error();
- '
+ * Title: 'Handling cast  error;
  * Description: ''
  * Author: 'Masum Rana'
  * Date: 27-12-2023
  *
-*/
+ */
 
 import mongoose from 'mongoose';
 import { IErrorMessages } from '../inerfaces/error';

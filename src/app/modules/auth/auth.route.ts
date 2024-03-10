@@ -20,7 +20,7 @@ router.get(
 
 router.post(
   '/login',
-  validateRequest(authValidationSchema.userLoginZodSchema),
+  // validateRequest(authValidationSchema.userLoginZodSchema),
   AuthController.userLogin,
 );
 

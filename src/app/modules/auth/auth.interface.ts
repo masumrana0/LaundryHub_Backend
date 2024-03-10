@@ -9,6 +9,12 @@ export type ILoginUserResponse = {
   isEmailVerified: boolean;
 };
 
+export type IDataValidationResponse = {
+  validationResponse: {
+    message?: string;
+  };
+};
+
 export type IRefreshTokenResponse = {
   accessToken: string;
 };

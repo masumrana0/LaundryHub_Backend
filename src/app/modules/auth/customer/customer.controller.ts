@@ -13,12 +13,13 @@ import catchAsync from '../../../../shared/catchAsync';
 import sendResponse from '../../../../shared/sendResponse';
 import { ILoginUserResponse } from '../auth.interface';
 import { CustomerService } from './customer.service';
-import { AuthService } from '../auth.service';
 
 // customer registration with login
 const customerRegistration = catchAsync(async (req: Request, res: Response) => {
   const { ...userData } = req.body;
-  await AuthService.sendEmailVerificationMail(userData.email);
+  console.log('i am from registration controller', userData);
+
+  // await AuthService.sendEmailVerificationMail(userData.email);
   const result = await CustomerService.customerRegistration(userData);
   const { refreshToken, accessToken, isEmailVerified } = result;
   const responseData = { accessToken, isEmailVerified };

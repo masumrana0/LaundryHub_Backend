@@ -2,6 +2,7 @@ import httpStatus from 'http-status';
 import { User } from '../user/user.model';
 import { JwtPayload, Secret } from 'jsonwebtoken';
 import {
+  IDataValidationResponse,
   IChangePassword,
   ILoginUser,
   ILoginUserResponse,
@@ -12,15 +13,18 @@ import { jwtHelpers } from '../../../helper/jwtHelpers';
 import config from '../../../config';
 import { IUser } from '../user/user.interface';
 import { sendMailerHelper } from '../../../helper/sendMailHelper';
+import validationResponse from '../../../shared/validationResponse';
 
 // login user
-const userLogin = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
+const userLogin = async (
+  payload: ILoginUser,
+): Promise<ILoginUserResponse | IDataValidationResponse> => {
   const { email, password } = payload;
 
   // checking isUserExist
   const isUserExist = await User.isUserExist(email);
   if (!isUserExist) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User does not exist');
+    return validationResponse('User does not exist,Please create new account!');
   }
 
   // matching password
@@ -28,7 +32,7 @@ const userLogin = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
     isUserExist.password &&
     !(await User.isPasswordMatched(password, isUserExist.password))
   ) {
-    throw new ApiError(httpStatus.UNAUTHORIZED, 'password is inccorect');
+    return validationResponse('incorrect Password.Please try again');
   }
 
   // create accessToken & refresh token
